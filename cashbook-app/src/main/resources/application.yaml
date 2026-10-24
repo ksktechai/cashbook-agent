@@ -1,0 +1,16 @@
+quarkus:
+  application:
+    name: cashbook-agent
+  banner:
+    enabled: false
+  log:
+    category:
+      # Framework start/stop lines fall outside a run and would lack a correlation id.
+      "io.quarkus":
+        level: WARN
+    console:
+      # stdout is for command output; logs go to stderr as JSONL.
+      stderr: true
+      json:
+        enabled: true
+        excluded-keys: hostName,processName,processId,ndc,sequence,loggerClassName,threadId

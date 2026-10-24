@@ -1,0 +1,6 @@
+private/
+.git/
+.idea/
+.gradle/
+**/build/
+target/

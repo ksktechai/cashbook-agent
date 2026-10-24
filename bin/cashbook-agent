@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# Runs the packaged CLI. Build it first with: ./gradlew :cashbook-app:quarkusBuild
+set -eu
+here=$(cd "$(dirname "$0")/.." && pwd)
+exec java -jar "$here/cashbook-app/build/quarkus-app/quarkus-run.jar" "$@"
