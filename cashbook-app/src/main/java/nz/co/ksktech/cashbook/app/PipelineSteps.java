@@ -23,6 +23,7 @@ import nz.co.ksktech.cashbook.core.Transaction;
 import nz.co.ksktech.cashbook.core.reconcile.ReconcileOptions;
 import nz.co.ksktech.cashbook.core.reconcile.Reconciler;
 import nz.co.ksktech.cashbook.core.rules.Rules;
+import nz.co.ksktech.cashbook.eval.EvalRunner;
 import nz.co.ksktech.cashbook.export.CashbookExporter;
 import nz.co.ksktech.cashbook.export.ExportInput;
 import nz.co.ksktech.cashbook.export.ExportOptions;
@@ -53,12 +54,7 @@ public class PipelineSteps {
     }
 
     Ingestor.Result ingest(Path in, Path out) {
-        CashbookConfig.Ingest ingest = config.ingest();
-        if (System.getProperty(JNA_LIBRARY_PATH) == null) {
-            System.setProperty(JNA_LIBRARY_PATH, ingest.ocr().libraryPath());
-        }
-        IngestOptions options = new IngestOptions(ingest.highlightThreshold(), Pattern.compile(ingest.businessAccountPattern()),
-                ingest.ocr().enabled(), ingest.ocr().tessdata().orElse(""), ingest.ocr().dpi());
+        IngestOptions options = ingestOptions();
         Ingestor.Result result = Stages.run("ingest", () -> new Ingestor(options).ingest(in));
         IngestWriter.write(result, out);
         LOG.infof("transactions=%d statements=%d invoices=%d levies=%d skipped=%d", result.transactions().size(),
@@ -67,6 +63,34 @@ public class PipelineSteps {
         result.statements().stream().filter(s -> !s.reconciliation().reconciled())
                 .forEach(s -> LOG.errorf("%s does not reconcile: %s", s.summary().file(), s.reconciliation().problems()));
         return result;
+    }
+
+    /** Ingest settings from config; also points JNA at the Tesseract library for OCR. */
+    IngestOptions ingestOptions() {
+        CashbookConfig.Ingest ingest = config.ingest();
+        if (System.getProperty(JNA_LIBRARY_PATH) == null) {
+            System.setProperty(JNA_LIBRARY_PATH, ingest.ocr().libraryPath());
+        }
+        return new IngestOptions(ingest.highlightThreshold(), Pattern.compile(ingest.businessAccountPattern()),
+                ingest.ocr().enabled(), ingest.ocr().tessdata().orElse(""), ingest.ocr().dpi());
+    }
+
+    ReconcileOptions reconcileOptions(Period period) {
+        CashbookConfig.Reconcile r = config.reconcile();
+        return new ReconcileOptions(period, r.capitaliseThresholdExclGst(), r.capitaliseCodes(), r.monthlyCodes(),
+                r.sections(), r.repaymentWindowDays());
+    }
+
+    /** What an evaluation run needs, from the same config as a real run. */
+    EvalRunner.Setup evalSetup(Period period, Path rules, Path template) {
+        Rules loaded = RulesLoader.load(rulesFile(rules));
+        return new EvalRunner.Setup(ingestOptions(), loaded, config.review().threshold(), config.llm().reviewAll(),
+                reconcileOptions(period), ExportOptions.defaults(), template);
+    }
+
+    /** "ollama:qwen3:30b" for the model a run would use. */
+    String modelName(String model) {
+        return OLLAMA + ":" + (model != null ? model : config.llm().ollama().model());
     }
 
     /** Classifies, keeping any review answers already in {@code out}. */
@@ -91,9 +115,7 @@ public class PipelineSteps {
         Rules loaded = RulesLoader.load(rulesFile(rules));
         Map<String, String> names = new HashMap<>();
         loaded.codes().forEach((k, v) -> names.put(k, v.name()));
-        CashbookConfig.Reconcile r = config.reconcile();
-        ReconcileOptions options = new ReconcileOptions(period, r.capitaliseThresholdExclGst(), r.capitaliseCodes(),
-                r.monthlyCodes(), r.sections(), r.repaymentWindowDays());
+        ReconcileOptions options = reconcileOptions(period);
         List<ClassifiedLine> lines = ClassifyStore.readLines(classified);
         List<ReviewEntry> queue = ClassifyStore.readReview(classified);
         Reconciler.Result result = Stages.run("reconcile", () -> new Reconciler(options, names).reconcile(
@@ -115,7 +137,8 @@ public class PipelineSteps {
         return report;
     }
 
-    private Classifier classifier(String llm, List<String> urls, String model) {
+    /** The LLM for {@code --llm}, or null for rules only. Throws if Ollama is unreachable or lacks the model. */
+    Classifier classifier(String llm, List<String> urls, String model) {
         String provider = llm != null ? llm : config.llm().provider();
         if (NONE.equalsIgnoreCase(provider)) {
             return null;

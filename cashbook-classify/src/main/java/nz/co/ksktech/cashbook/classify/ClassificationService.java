@@ -23,7 +23,8 @@ import nz.co.ksktech.cashbook.core.rules.Rules;
  */
 public final class ClassificationService {
 
-    static final String UNKNOWN = "unknown";
+    /** decidedBy of a line no rule or model settled: it waits for a person. */
+    public static final String UNKNOWN = "unknown";
     private static final String NZD = "NZD";
 
     private final RuleEngine engine;

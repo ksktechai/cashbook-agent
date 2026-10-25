@@ -6,6 +6,7 @@ import io.quarkus.test.junit.main.Launch;
 import io.quarkus.test.junit.main.LaunchResult;
 import io.quarkus.test.junit.main.QuarkusMainLauncher;
 import io.quarkus.test.junit.main.QuarkusMainTest;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -16,7 +17,8 @@ class CashbookCommandTest {
     @Test
     @Launch("--help")
     void helpListsRunCommand(LaunchResult result) {
-        assertThat(result.getOutput()).contains("cashbook-agent", "run", "ingest", "classify", "review", "reconcile", "export", "synth");
+        assertThat(result.getOutput()).contains("cashbook-agent", "run", "ingest", "classify", "review", "reconcile", "export", "eval",
+                "synth");
     }
 
     @Test
@@ -99,6 +101,35 @@ class CashbookCommandTest {
             assertThat(launcher.launch(run).exitCode()).isZero();
         }
         assertThat(out).isNotEmptyFile();
+    }
+
+    @Test
+    void evalScoresBothModesAndReportsAnUnreachableModel(QuarkusMainLauncher launcher, @TempDir Path dir) throws Exception {
+        Path synth = dir.resolve("synth");
+        assertThat(launcher.launch("synth", "--seed", "42", "--out", synth.toString()).exitCode()).isZero();
+        Path out = dir.resolve("eval");
+        LaunchResult result = launcher.launch("eval", "--golden", synth.resolve("golden/cashbook.jsonl").toString(),
+                "--period", "2026-10:2027-03", "--in", synth.resolve("in").toString(), "--template",
+                synth.resolve("template.xlsx").toString(), "--rules", "../config/rules.example.yaml", "--out", out.toString(),
+                "--ollama-url", "http://127.0.0.1:9");
+        assertThat(result.exitCode()).isZero();
+        String report = Files.readString(out.resolve("report.md"));
+        assertThat(report).contains("| | rules | llm |", "**llm** not run: no Ollama server reachable at http://127.0.0.1:9");
+        assertThat(report).containsPattern("Known-vendor lines correct \\| (\\d+)/\\1 \\(100\\.0%\\)");
+        assertThat(out.resolve("report.json")).isNotEmptyFile();
+        assertThat(out.resolve("work/rules/cashbook.xlsx")).isNotEmptyFile();
+        // the finished cashbook can be scored on its own
+        assertThat(launcher.launch("eval", "--golden", synth.resolve("golden/cashbook.xlsx").toString(), "--period",
+                "2026-10:2027-03", "--actual", out.resolve("work/rules/cashbook.xlsx").toString(), "--work",
+                out.resolve("work/rules").toString(), "--out", dir.resolve("eval-actual").toString()).exitCode()).isZero();
+        assertThat(Files.readString(dir.resolve("eval-actual/report.md"))).contains("| | actual |", "Statements reconciled | 6/6");
+    }
+
+    @Test
+    @Launch(value = {"eval", "--golden", "private/golden/cashbook.xlsx", "--period", "2026-04:2026-09", "--actual", "x.xlsx",
+        "--out", "eval"}, exitCode = 2)
+    void aReportOnPrivateDataMustStayInPrivate(LaunchResult result) {
+        assertThat(result.getErrorOutput()).contains("--out must be under private/");
     }
 
     /** Answers every open review item: excluded (a person would choose codes; any answer completes the run). */

@@ -36,6 +36,7 @@ Sources of truth: `PROJECT_BRIEF.md` (goals, principles) and `docs/BUILD_PROMPT.
 - `bin/cashbook-agent classify --in target/ingest --out target/classify --rules config/rules.example.yaml [--llm ollama]`, then `bin/cashbook-agent review --dir target/classify` (see `docs/CLASSIFY.md`)
 - `bin/cashbook-agent reconcile --classified target/classify --ingest target/ingest --period 2026-10:2027-03 --out target/reconcile` builds the cashbook lines (see `docs/RECONCILE.md`)
 - `bin/cashbook-agent run --period … --in … --template … --out …` runs everything; it stops for review and keeps answers across runs (see `docs/EXPORT.md`)
+- `bin/cashbook-agent eval --golden … --period … --in … --template … --out …` scores rules-only and rules+LLM runs side by side (see `docs/EVAL.md`); with private inputs, `--out` must be under `private/`
 - Ollama servers come from `CASHBOOK_LLM_OLLAMA_URLS` in a git-ignored `.env` (see `.env.example`)
 - OCR needs Tesseract locally (`brew install tesseract`); CI and Docker install it
 - `./gradlew :synthetic:updateTemplate` rewrites the committed sanitised template after a deliberate `TemplateBuilder` change

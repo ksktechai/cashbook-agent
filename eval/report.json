@@ -1,0 +1,3991 @@
+{
+  "generated" : "2026-10-26",
+  "golden" : "target/synth/golden/cashbook.jsonl",
+  "period" : "2026-10:2027-03",
+  "modes" : [ {
+    "mode" : "rules",
+    "classifier" : "rules only",
+    "notRun" : null,
+    "score" : {
+      "goldenLines" : 81,
+      "actualLines" : 73,
+      "matched" : 72,
+      "wrongCode" : 0,
+      "missing" : 9,
+      "extra" : 1,
+      "accuracy" : 0.8888888888888888,
+      "ruleDecidedLines" : 53,
+      "ruleDecidedCorrect" : 53,
+      "goldenGstCollected" : 8100.00,
+      "actualGstCollected" : 8100.00,
+      "gstCollectedDiff" : 0.00,
+      "goldenGstClaimed" : 1981.47,
+      "actualGstClaimed" : 1531.80,
+      "gstClaimedDiff" : -449.67,
+      "gstWithinTolerance" : false,
+      "codes" : [ {
+        "code" : "707",
+        "goldenLines" : 7,
+        "actualLines" : 7,
+        "matched" : 7,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : 62100.00,
+        "actualAmount" : 62100.00,
+        "difference" : 0.00
+      }, {
+        "code" : "710",
+        "goldenLines" : 5,
+        "actualLines" : 5,
+        "matched" : 5,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -25.00,
+        "actualAmount" : -25.00,
+        "difference" : 0.00
+      }, {
+        "code" : "711",
+        "goldenLines" : 2,
+        "actualLines" : 2,
+        "matched" : 2,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -1725.00,
+        "actualAmount" : -1725.00,
+        "difference" : 0.00
+      }, {
+        "code" : "724",
+        "goldenLines" : 6,
+        "actualLines" : 6,
+        "matched" : 6,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -14400.00,
+        "actualAmount" : -14400.00,
+        "difference" : 0.00
+      }, {
+        "code" : "725",
+        "goldenLines" : 6,
+        "actualLines" : 6,
+        "matched" : 6,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -778.93,
+        "actualAmount" : -778.93,
+        "difference" : 0.00
+      }, {
+        "code" : "726",
+        "goldenLines" : 6,
+        "actualLines" : 1,
+        "matched" : 0,
+        "precision" : 0.0,
+        "recall" : 0.0,
+        "goldenAmount" : -535.50,
+        "actualAmount" : -46.50,
+        "difference" : 489.00
+      }, {
+        "code" : "727",
+        "goldenLines" : 6,
+        "actualLines" : 6,
+        "matched" : 6,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -530.19,
+        "actualAmount" : -530.19,
+        "difference" : 0.00
+      }, {
+        "code" : "728",
+        "goldenLines" : 6,
+        "actualLines" : 6,
+        "matched" : 6,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -390.00,
+        "actualAmount" : -390.00,
+        "difference" : 0.00
+      }, {
+        "code" : "729",
+        "goldenLines" : 6,
+        "actualLines" : 6,
+        "matched" : 6,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -164.60,
+        "actualAmount" : -164.60,
+        "difference" : 0.00
+      }, {
+        "code" : "730",
+        "goldenLines" : 6,
+        "actualLines" : 6,
+        "matched" : 6,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -289.20,
+        "actualAmount" : -289.20,
+        "difference" : 0.00
+      }, {
+        "code" : "732",
+        "goldenLines" : 1,
+        "actualLines" : 1,
+        "matched" : 1,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -1240.00,
+        "actualAmount" : -1240.00,
+        "difference" : 0.00
+      }, {
+        "code" : "733",
+        "goldenLines" : 2,
+        "actualLines" : 2,
+        "matched" : 2,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -6339.37,
+        "actualAmount" : -6339.37,
+        "difference" : 0.00
+      }, {
+        "code" : "734",
+        "goldenLines" : 9,
+        "actualLines" : 6,
+        "matched" : 6,
+        "precision" : 1.0,
+        "recall" : 0.6666666666666666,
+        "goldenAmount" : -3198.50,
+        "actualAmount" : -240.00,
+        "difference" : 2958.50
+      }, {
+        "code" : "739",
+        "goldenLines" : 13,
+        "actualLines" : 13,
+        "matched" : 13,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -348.15,
+        "actualAmount" : -348.15,
+        "difference" : 0.00
+      } ]
+    },
+    "stats" : {
+      "reviewItems" : 16,
+      "pendingLines" : 15,
+      "llmCalls" : 0,
+      "llmInputTokens" : 0,
+      "llmOutputTokens" : 0,
+      "llmMillis" : 0,
+      "costNzd" : 0.0,
+      "runMillis" : 2328,
+      "statements" : 6,
+      "statementsReconciled" : 6,
+      "reconcileProblems" : [ ],
+      "exportFailures" : [ ]
+    },
+    "matching" : {
+      "matched" : [ {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-05",
+          "code" : "725",
+          "detail" : "Power - Fibrewave",
+          "amount" : -153.48,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -20.0191,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-05",
+          "code" : "725",
+          "detail" : "Power - FIBREWAVE INTERNET",
+          "amount" : -153.48,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -20.0191,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-05",
+          "code" : "727",
+          "detail" : "Internet - Fibrewave",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-05",
+          "code" : "727",
+          "detail" : "Internet - FIBREWAVE INTERNET",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-20",
+          "code" : "733",
+          "detail" : "Body Corp Fees - Kowhai BC levy Oct-Dec (net of early-payment discount)",
+          "amount" : -3148.47,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -410.6700,
+          "source" : "ChequeAccount-05Apr27.pdf p.4",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-20",
+          "code" : "733",
+          "detail" : "4BBodyCorp-Kowhai Body-Corp L0007700010",
+          "amount" : -3148.47,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -410.6700,
+          "source" : "ChequeAccount-05Apr27.pdf p.4",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-02",
+          "code" : "724",
+          "detail" : "Apartment Rent",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-02",
+          "code" : "724",
+          "detail" : "4B-12 (Apartment Rent-4B-12 S000123",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-05",
+          "code" : "728",
+          "detail" : "Mobile Plan - Tui Mobile NZ",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-05",
+          "code" : "728",
+          "detail" : "Tui Mobile TM",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-15",
+          "code" : "707",
+          "detail" : "Income - Oct - Kereru Digital (Invoice INV-1041)",
+          "amount" : 8280.00,
+          "gstCollected" : 1080.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-15",
+          "code" : "707",
+          "detail" : "Kereru Digital Limited",
+          "amount" : 8280.00,
+          "gstCollected" : 1080.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-02",
+          "code" : "729",
+          "detail" : "Car Park Fees",
+          "amount" : -26.90,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -3.5087,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4 (+2 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-02",
+          "code" : "729",
+          "detail" : "Car Parking (3)",
+          "amount" : -26.90,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -3.5087,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4 (+2 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-31",
+          "code" : "710",
+          "detail" : "Bank Fees",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-31",
+          "code" : "710",
+          "detail" : "Account maintenance",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-07",
+          "code" : "730",
+          "detail" : "Home Contents Insurance",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.4",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-07",
+          "code" : "730",
+          "detail" : "Kauri Insurance Kauri",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.4",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-03",
+          "code" : "734",
+          "detail" : "Home Office Expenses - iCloud+ 2TB subscription ($54.98 less $14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-03",
+          "code" : "734",
+          "detail" : "APPLE.COM/BILL (54.98 less 14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-10",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - CloudNote",
+          "amount" : -20.26,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-10",
+          "code" : "739",
+          "detail" : "CLOUDNOTE.IO SAN FRANCISCO (USD 12.00) incl. offshore margin",
+          "amount" : -20.26,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-14",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - NoteForge AI",
+          "amount" : -33.69,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-14",
+          "code" : "739",
+          "detail" : "NOTEFORGE AI (USD 20.00 incl. fee 0.17)",
+          "amount" : -33.69,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-05",
+          "code" : "725",
+          "detail" : "Power - Fibrewave",
+          "amount" : -124.97,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -16.3004,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-05",
+          "code" : "725",
+          "detail" : "Power - FIBREWAVE INTERNET",
+          "amount" : -124.97,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -16.3004,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-05",
+          "code" : "727",
+          "detail" : "Internet - Fibrewave",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-05",
+          "code" : "727",
+          "detail" : "Internet - FIBREWAVE INTERNET",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-02",
+          "code" : "724",
+          "detail" : "Apartment Rent",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-02",
+          "code" : "724",
+          "detail" : "4B-12 (Apartment Rent-4B-12 S000123",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-05",
+          "code" : "728",
+          "detail" : "Mobile Plan - Tui Mobile NZ",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-05",
+          "code" : "728",
+          "detail" : "Tui Mobile TM",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-15",
+          "code" : "707",
+          "detail" : "Income - Nov - Kereru Digital (Invoice INV-1042)",
+          "amount" : 9142.50,
+          "gstCollected" : 1192.5000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-15",
+          "code" : "707",
+          "detail" : "Kereru Digital Limited",
+          "amount" : 9142.50,
+          "gstCollected" : 1192.5000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-08",
+          "code" : "729",
+          "detail" : "Car Park Fees",
+          "amount" : -31.40,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -4.0957,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3 (+2 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-08",
+          "code" : "729",
+          "detail" : "Car Parking (3)",
+          "amount" : -31.40,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -4.0957,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3 (+2 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-30",
+          "code" : "710",
+          "detail" : "Bank Fees",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-30",
+          "code" : "710",
+          "detail" : "Account maintenance",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-07",
+          "code" : "730",
+          "detail" : "Home Contents Insurance",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-07",
+          "code" : "730",
+          "detail" : "Kauri Insurance Kauri",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-03",
+          "code" : "734",
+          "detail" : "Home Office Expenses - iCloud+ 2TB subscription ($54.98 less $14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-03",
+          "code" : "734",
+          "detail" : "APPLE.COM/BILL (54.98 less 14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-10",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - CloudNote",
+          "amount" : -21.53,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-10",
+          "code" : "739",
+          "detail" : "CLOUDNOTE.IO SAN FRANCISCO (USD 12.00) incl. offshore margin",
+          "amount" : -21.53,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-14",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - NoteForge AI",
+          "amount" : -33.30,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-14",
+          "code" : "739",
+          "detail" : "NOTEFORGE AI (USD 20.00 incl. fee 0.17)",
+          "amount" : -33.30,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-04",
+          "code" : "732",
+          "detail" : "Indemnity Insurance - Shield (annual)",
+          "amount" : -1240.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -161.7391,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-04",
+          "code" : "732",
+          "detail" : "SHIELD PROFESSIONAL INDEMNITY",
+          "amount" : -1240.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -161.7391,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-22",
+          "code" : "711",
+          "detail" : "Accountant Fee (Accountancy)",
+          "amount" : -1150.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -150.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-22",
+          "code" : "711",
+          "detail" : "1234Ledger L&Co Inv-5511",
+          "amount" : -1150.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -150.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-05",
+          "code" : "725",
+          "detail" : "Power - Fibrewave",
+          "amount" : -125.55,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -16.3761,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-05",
+          "code" : "725",
+          "detail" : "Power - FIBREWAVE INTERNET",
+          "amount" : -125.55,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -16.3761,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-05",
+          "code" : "727",
+          "detail" : "Internet - Fibrewave",
+          "amount" : -80.24,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -10.4661,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-05",
+          "code" : "727",
+          "detail" : "Internet - FIBREWAVE INTERNET",
+          "amount" : -80.24,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -10.4661,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-02",
+          "code" : "724",
+          "detail" : "Apartment Rent",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-02",
+          "code" : "724",
+          "detail" : "4B-12 (Apartment Rent-4B-12 S000123",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-05",
+          "code" : "728",
+          "detail" : "Mobile Plan - Tui Mobile NZ",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-05",
+          "code" : "728",
+          "detail" : "Tui Mobile TM",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-15",
+          "code" : "707",
+          "detail" : "Income - Dec - Kereru Digital (Invoice INV-1043)",
+          "amount" : 10695.00,
+          "gstCollected" : 1395.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-15",
+          "code" : "707",
+          "detail" : "Kereru Digital Limited",
+          "amount" : 10695.00,
+          "gstCollected" : 1395.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-06",
+          "code" : "729",
+          "detail" : "Car Park Fees",
+          "amount" : -16.30,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -2.1261,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-06",
+          "code" : "729",
+          "detail" : "Car Parking (2)",
+          "amount" : -16.30,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -2.1261,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-07",
+          "code" : "730",
+          "detail" : "Home Contents Insurance",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-07",
+          "code" : "730",
+          "detail" : "Kauri Insurance Kauri",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-03",
+          "code" : "734",
+          "detail" : "Home Office Expenses - iCloud+ 2TB subscription ($54.98 less $14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-03",
+          "code" : "734",
+          "detail" : "APPLE.COM/BILL (54.98 less 14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-10",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - CloudNote",
+          "amount" : -21.09,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-10",
+          "code" : "739",
+          "detail" : "CLOUDNOTE.IO SAN FRANCISCO (USD 12.00) incl. offshore margin",
+          "amount" : -21.09,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-14",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - NoteForge AI",
+          "amount" : -33.36,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-14",
+          "code" : "739",
+          "detail" : "NOTEFORGE AI (USD 20.00 incl. fee 0.17)",
+          "amount" : -33.36,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-05",
+          "code" : "725",
+          "detail" : "Power - Fibrewave",
+          "amount" : -122.47,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -15.9743,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-05",
+          "code" : "725",
+          "detail" : "Power - FIBREWAVE INTERNET",
+          "amount" : -122.47,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -15.9743,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-05",
+          "code" : "727",
+          "detail" : "Internet - Fibrewave",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-05",
+          "code" : "727",
+          "detail" : "Internet - FIBREWAVE INTERNET",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-20",
+          "code" : "733",
+          "detail" : "Body Corp Fees - Kowhai BC levy Jan-Mar (net of early-payment discount)",
+          "amount" : -3190.90,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -416.2043,
+          "source" : "ChequeAccount-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-20",
+          "code" : "733",
+          "detail" : "4BBodyCorp-Kowhai Body-Corp L0007700001",
+          "amount" : -3190.90,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -416.2043,
+          "source" : "ChequeAccount-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-02",
+          "code" : "724",
+          "detail" : "Apartment Rent",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-02",
+          "code" : "724",
+          "detail" : "4B-12 (Apartment Rent-4B-12 S000123",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-05",
+          "code" : "728",
+          "detail" : "Mobile Plan - Tui Mobile NZ",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-05",
+          "code" : "728",
+          "detail" : "Tui Mobile TM",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-15",
+          "code" : "707",
+          "detail" : "Income - Jan - Kereru Digital (Invoice INV-1044)",
+          "amount" : 10005.00,
+          "gstCollected" : 1305.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-15",
+          "code" : "707",
+          "detail" : "Kereru Digital Limited",
+          "amount" : 10005.00,
+          "gstCollected" : 1305.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-28",
+          "code" : "707",
+          "detail" : "Income - January - Pohutukawa Analytics (Invoice PA-0007)",
+          "amount" : 4140.00,
+          "gstCollected" : 540.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-28",
+          "code" : "707",
+          "detail" : "Pohutukawa Analytics Ltd",
+          "amount" : 4140.00,
+          "gstCollected" : 540.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-04",
+          "code" : "729",
+          "detail" : "Car Park Fees",
+          "amount" : -37.50,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -4.8913,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2 (+3 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-04",
+          "code" : "729",
+          "detail" : "Car Parking (4)",
+          "amount" : -37.50,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -4.8913,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2 (+3 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-31",
+          "code" : "710",
+          "detail" : "Bank Fees",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-31",
+          "code" : "710",
+          "detail" : "Account maintenance",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-07",
+          "code" : "730",
+          "detail" : "Home Contents Insurance",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-07",
+          "code" : "730",
+          "detail" : "Kauri Insurance Kauri",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-03",
+          "code" : "734",
+          "detail" : "Home Office Expenses - iCloud+ 2TB subscription ($54.98 less $14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-03",
+          "code" : "734",
+          "detail" : "APPLE.COM/BILL (54.98 less 14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-10",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - CloudNote",
+          "amount" : -21.04,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-10",
+          "code" : "739",
+          "detail" : "CLOUDNOTE.IO SAN FRANCISCO (USD 12.00) incl. offshore margin",
+          "amount" : -21.04,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-14",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - NoteForge AI",
+          "amount" : -34.31,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-14",
+          "code" : "739",
+          "detail" : "NOTEFORGE AI (USD 20.00 incl. fee 0.17)",
+          "amount" : -34.31,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-05",
+          "code" : "725",
+          "detail" : "Power - Fibrewave",
+          "amount" : -122.57,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -15.9874,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-05",
+          "code" : "725",
+          "detail" : "Power - FIBREWAVE INTERNET",
+          "amount" : -122.57,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -15.9874,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-05",
+          "code" : "727",
+          "detail" : "Internet - Fibrewave",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-05",
+          "code" : "727",
+          "detail" : "Internet - FIBREWAVE INTERNET",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-02",
+          "code" : "724",
+          "detail" : "Apartment Rent",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-02",
+          "code" : "724",
+          "detail" : "4B-12 (Apartment Rent-4B-12 S000123",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-05",
+          "code" : "728",
+          "detail" : "Mobile Plan - Tui Mobile NZ",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-05",
+          "code" : "728",
+          "detail" : "Tui Mobile TM",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-15",
+          "code" : "707",
+          "detail" : "Income - Feb - Kereru Digital (Invoice INV-1045)",
+          "amount" : 11040.00,
+          "gstCollected" : 1440.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-15",
+          "code" : "707",
+          "detail" : "Kereru Digital Limited",
+          "amount" : 11040.00,
+          "gstCollected" : 1440.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-11",
+          "code" : "729",
+          "detail" : "Car Park Fees",
+          "amount" : -24.50,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -3.1957,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1 (+2 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-11",
+          "code" : "729",
+          "detail" : "Car Parking (3)",
+          "amount" : -24.50,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -3.1957,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1 (+2 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-28",
+          "code" : "710",
+          "detail" : "Bank Fees",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-28",
+          "code" : "710",
+          "detail" : "Account maintenance",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-07",
+          "code" : "730",
+          "detail" : "Home Contents Insurance",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-07",
+          "code" : "730",
+          "detail" : "Kauri Insurance Kauri",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-03",
+          "code" : "734",
+          "detail" : "Home Office Expenses - iCloud+ 2TB subscription ($54.98 less $14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-03",
+          "code" : "734",
+          "detail" : "APPLE.COM/BILL (54.98 less 14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-10",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - CloudNote",
+          "amount" : -20.66,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-10",
+          "code" : "739",
+          "detail" : "CLOUDNOTE.IO SAN FRANCISCO (USD 12.00) incl. offshore margin",
+          "amount" : -20.66,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-14",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - NoteForge AI",
+          "amount" : -34.48,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-14",
+          "code" : "739",
+          "detail" : "NOTEFORGE AI (USD 20.00 incl. fee 0.17)",
+          "amount" : -34.48,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-16",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - Kanbanly",
+          "amount" : -20.14,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-16",
+          "code" : "739",
+          "detail" : "KANBANLY PTY SYDNEY (AUD 18.00) incl. offshore margin",
+          "amount" : -20.14,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-22",
+          "code" : "711",
+          "detail" : "Accountant Fee (Accountancy)",
+          "amount" : -575.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -75.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-22",
+          "code" : "711",
+          "detail" : "1234Ledger L&Co Inv-552",
+          "amount" : -575.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -75.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-05",
+          "code" : "725",
+          "detail" : "Power - Fibrewave",
+          "amount" : -129.89,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -16.9422,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-05",
+          "code" : "725",
+          "detail" : "Power - FIBREWAVE INTERNET",
+          "amount" : -129.89,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -16.9422,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-05",
+          "code" : "727",
+          "detail" : "Internet - Fibrewave",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-05",
+          "code" : "727",
+          "detail" : "Internet - FIBREWAVE INTERNET",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-02",
+          "code" : "724",
+          "detail" : "Apartment Rent",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-02",
+          "code" : "724",
+          "detail" : "4B-12 (Apartment Rent-4B-12 S000123",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-05",
+          "code" : "728",
+          "detail" : "Mobile Plan - Tui Mobile NZ",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-05",
+          "code" : "728",
+          "detail" : "Tui Mobile TM",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-15",
+          "code" : "707",
+          "detail" : "Income - Mar - Kereru Digital (Invoice INV-1046)",
+          "amount" : 8797.50,
+          "gstCollected" : 1147.5000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-15",
+          "code" : "707",
+          "detail" : "Kereru Digital Limited",
+          "amount" : 8797.50,
+          "gstCollected" : 1147.5000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-09",
+          "code" : "729",
+          "detail" : "Car Park Fees",
+          "amount" : -28.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -3.6522,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1 (+2 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-09",
+          "code" : "729",
+          "detail" : "Car Parking (3)",
+          "amount" : -28.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -3.6522,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1 (+2 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-31",
+          "code" : "710",
+          "detail" : "Bank Fees",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-31",
+          "code" : "710",
+          "detail" : "Account maintenance",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-07",
+          "code" : "730",
+          "detail" : "Home Contents Insurance",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-07",
+          "code" : "730",
+          "detail" : "Kauri Insurance Kauri",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-03",
+          "code" : "734",
+          "detail" : "Home Office Expenses - iCloud+ 2TB subscription ($54.98 less $14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-03",
+          "code" : "734",
+          "detail" : "APPLE.COM/BILL (54.98 less 14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-10",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - CloudNote",
+          "amount" : -20.69,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-10",
+          "code" : "739",
+          "detail" : "CLOUDNOTE.IO SAN FRANCISCO (USD 12.00) incl. offshore margin",
+          "amount" : -20.69,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-14",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - NoteForge AI",
+          "amount" : -33.60,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-14",
+          "code" : "739",
+          "detail" : "NOTEFORGE AI (USD 20.00 incl. fee 0.17)",
+          "amount" : -33.60,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        }
+      } ],
+      "wrongCode" : [ ],
+      "missing" : [ {
+        "month" : "2026-10",
+        "date" : "2026-10-17",
+        "code" : "726",
+        "detail" : "Entertainment (Business Lunch/Coffee/Meals/Drinks)",
+        "amount" : -65.00,
+        "gstCollected" : 0.0000,
+        "gstClaimed" : -8.4783,
+        "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+        "ruleDecided" : false
+      }, {
+        "month" : "2026-10",
+        "date" : "2026-09-30",
+        "code" : "734",
+        "detail" : "Home Office Expenses - Domain renewal (card 30/09, processed 01/10)",
+        "amount" : -35.00,
+        "gstCollected" : 0.0000,
+        "gstClaimed" : -4.5652,
+        "source" : "Harbourside-NetBank-Credit-visa.pdf p.1",
+        "ruleDecided" : false
+      }, {
+        "month" : "2026-11",
+        "date" : "2026-11-12",
+        "code" : "726",
+        "detail" : "Entertainment (Business Lunch/Coffee/Meals/Drinks)",
+        "amount" : -87.00,
+        "gstCollected" : 0.0000,
+        "gstClaimed" : -11.3478,
+        "source" : "KauriRewardsMastercard-05Apr27.pdf p.2 (+1 more)",
+        "ruleDecided" : false
+      }, {
+        "month" : "2026-12",
+        "date" : "2026-12-09",
+        "code" : "726",
+        "detail" : "Entertainment (Business Lunch/Coffee/Meals/Drinks)",
+        "amount" : -117.00,
+        "gstCollected" : 0.0000,
+        "gstClaimed" : -15.2609,
+        "source" : "KauriRewardsMastercard-05Apr27.pdf p.2 (+1 more)",
+        "ruleDecided" : false
+      }, {
+        "month" : "2026-12",
+        "date" : "2026-12-12",
+        "code" : "734",
+        "detail" : "Home Office Expenses - Laptop (may need capitalising)",
+        "amount" : -2899.00,
+        "gstCollected" : 0.0000,
+        "gstClaimed" : -378.1304,
+        "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+        "ruleDecided" : false
+      }, {
+        "month" : "2026-12",
+        "date" : "2026-12-31",
+        "code" : "734",
+        "detail" : "Home Office Expenses - Printer paper and toner (card 31/12, processed 04/01)",
+        "amount" : -24.50,
+        "gstCollected" : 0.0000,
+        "gstClaimed" : -3.1957,
+        "source" : "Harbourside-NetBank-Credit-visa.pdf p.2",
+        "ruleDecided" : false
+      }, {
+        "month" : "2027-01",
+        "date" : "2027-01-09",
+        "code" : "726",
+        "detail" : "Entertainment (Business Lunch/Coffee/Meals/Drinks)",
+        "amount" : -87.50,
+        "gstCollected" : 0.0000,
+        "gstClaimed" : -11.4130,
+        "source" : "KauriRewardsMastercard-05Apr27.pdf p.2 (+1 more)",
+        "ruleDecided" : false
+      }, {
+        "month" : "2027-02",
+        "date" : "2027-02-06",
+        "code" : "726",
+        "detail" : "Entertainment (Business Lunch/Coffee/Meals/Drinks)",
+        "amount" : -102.00,
+        "gstCollected" : 0.0000,
+        "gstClaimed" : -13.3043,
+        "source" : "KauriRewardsMastercard-05Apr27.pdf p.1 (+1 more)",
+        "ruleDecided" : false
+      }, {
+        "month" : "2027-03",
+        "date" : "2027-03-09",
+        "code" : "726",
+        "detail" : "Entertainment (Business Lunch/Coffee/Meals/Drinks)",
+        "amount" : -77.00,
+        "gstCollected" : 0.0000,
+        "gstClaimed" : -10.0435,
+        "source" : "KauriRewardsMastercard-05Apr27.pdf p.1 (+1 more)",
+        "ruleDecided" : false
+      } ],
+      "extra" : [ {
+        "month" : "2027-01",
+        "date" : "2027-01-29",
+        "code" : "726",
+        "detail" : "Entertainment (1)",
+        "amount" : -46.50,
+        "gstCollected" : 0.0000,
+        "gstClaimed" : -6.0652,
+        "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+        "ruleDecided" : false
+      } ]
+    }
+  }, {
+    "mode" : "llm",
+    "classifier" : "ollama:qwen3:30b",
+    "notRun" : null,
+    "score" : {
+      "goldenLines" : 81,
+      "actualLines" : 81,
+      "matched" : 81,
+      "wrongCode" : 0,
+      "missing" : 0,
+      "extra" : 0,
+      "accuracy" : 1.0,
+      "ruleDecidedLines" : 72,
+      "ruleDecidedCorrect" : 72,
+      "goldenGstCollected" : 8100.00,
+      "actualGstCollected" : 8100.00,
+      "gstCollectedDiff" : 0.00,
+      "goldenGstClaimed" : 1981.47,
+      "actualGstClaimed" : 1981.47,
+      "gstClaimedDiff" : 0.00,
+      "gstWithinTolerance" : true,
+      "codes" : [ {
+        "code" : "707",
+        "goldenLines" : 7,
+        "actualLines" : 7,
+        "matched" : 7,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : 62100.00,
+        "actualAmount" : 62100.00,
+        "difference" : 0.00
+      }, {
+        "code" : "710",
+        "goldenLines" : 5,
+        "actualLines" : 5,
+        "matched" : 5,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -25.00,
+        "actualAmount" : -25.00,
+        "difference" : 0.00
+      }, {
+        "code" : "711",
+        "goldenLines" : 2,
+        "actualLines" : 2,
+        "matched" : 2,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -1725.00,
+        "actualAmount" : -1725.00,
+        "difference" : 0.00
+      }, {
+        "code" : "724",
+        "goldenLines" : 6,
+        "actualLines" : 6,
+        "matched" : 6,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -14400.00,
+        "actualAmount" : -14400.00,
+        "difference" : 0.00
+      }, {
+        "code" : "725",
+        "goldenLines" : 6,
+        "actualLines" : 6,
+        "matched" : 6,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -778.93,
+        "actualAmount" : -778.93,
+        "difference" : 0.00
+      }, {
+        "code" : "726",
+        "goldenLines" : 6,
+        "actualLines" : 6,
+        "matched" : 6,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -535.50,
+        "actualAmount" : -535.50,
+        "difference" : 0.00
+      }, {
+        "code" : "727",
+        "goldenLines" : 6,
+        "actualLines" : 6,
+        "matched" : 6,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -530.19,
+        "actualAmount" : -530.19,
+        "difference" : 0.00
+      }, {
+        "code" : "728",
+        "goldenLines" : 6,
+        "actualLines" : 6,
+        "matched" : 6,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -390.00,
+        "actualAmount" : -390.00,
+        "difference" : 0.00
+      }, {
+        "code" : "729",
+        "goldenLines" : 6,
+        "actualLines" : 6,
+        "matched" : 6,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -164.60,
+        "actualAmount" : -164.60,
+        "difference" : 0.00
+      }, {
+        "code" : "730",
+        "goldenLines" : 6,
+        "actualLines" : 6,
+        "matched" : 6,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -289.20,
+        "actualAmount" : -289.20,
+        "difference" : 0.00
+      }, {
+        "code" : "732",
+        "goldenLines" : 1,
+        "actualLines" : 1,
+        "matched" : 1,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -1240.00,
+        "actualAmount" : -1240.00,
+        "difference" : 0.00
+      }, {
+        "code" : "733",
+        "goldenLines" : 2,
+        "actualLines" : 2,
+        "matched" : 2,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -6339.37,
+        "actualAmount" : -6339.37,
+        "difference" : 0.00
+      }, {
+        "code" : "734",
+        "goldenLines" : 9,
+        "actualLines" : 9,
+        "matched" : 9,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -3198.50,
+        "actualAmount" : -3198.50,
+        "difference" : 0.00
+      }, {
+        "code" : "739",
+        "goldenLines" : 13,
+        "actualLines" : 13,
+        "matched" : 13,
+        "precision" : 1.0,
+        "recall" : 1.0,
+        "goldenAmount" : -348.15,
+        "actualAmount" : -348.15,
+        "difference" : 0.00
+      } ]
+    },
+    "stats" : {
+      "reviewItems" : 18,
+      "pendingLines" : 0,
+      "llmCalls" : 8,
+      "llmInputTokens" : 4970,
+      "llmOutputTokens" : 307,
+      "llmMillis" : 5911,
+      "costNzd" : 0.0,
+      "runMillis" : 7048,
+      "statements" : 6,
+      "statementsReconciled" : 6,
+      "reconcileProblems" : [ ],
+      "exportFailures" : [ ]
+    },
+    "matching" : {
+      "matched" : [ {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-05",
+          "code" : "725",
+          "detail" : "Power - Fibrewave",
+          "amount" : -153.48,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -20.0191,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-05",
+          "code" : "725",
+          "detail" : "Power - FIBREWAVE INTERNET",
+          "amount" : -153.48,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -20.0191,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-05",
+          "code" : "727",
+          "detail" : "Internet - Fibrewave",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-05",
+          "code" : "727",
+          "detail" : "Internet - FIBREWAVE INTERNET",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-20",
+          "code" : "733",
+          "detail" : "Body Corp Fees - Kowhai BC levy Oct-Dec (net of early-payment discount)",
+          "amount" : -3148.47,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -410.6700,
+          "source" : "ChequeAccount-05Apr27.pdf p.4",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-20",
+          "code" : "733",
+          "detail" : "4BBodyCorp-Kowhai Body-Corp L0007700010",
+          "amount" : -3148.47,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -410.6700,
+          "source" : "ChequeAccount-05Apr27.pdf p.4",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-02",
+          "code" : "724",
+          "detail" : "Apartment Rent",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-02",
+          "code" : "724",
+          "detail" : "4B-12 (Apartment Rent-4B-12 S000123",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-05",
+          "code" : "728",
+          "detail" : "Mobile Plan - Tui Mobile NZ",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-05",
+          "code" : "728",
+          "detail" : "Tui Mobile TM",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-15",
+          "code" : "707",
+          "detail" : "Income - Oct - Kereru Digital (Invoice INV-1041)",
+          "amount" : 8280.00,
+          "gstCollected" : 1080.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-15",
+          "code" : "707",
+          "detail" : "Kereru Digital Limited",
+          "amount" : 8280.00,
+          "gstCollected" : 1080.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-02",
+          "code" : "729",
+          "detail" : "Car Park Fees",
+          "amount" : -26.90,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -3.5087,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4 (+2 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-02",
+          "code" : "729",
+          "detail" : "Car Parking (3)",
+          "amount" : -26.90,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -3.5087,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4 (+2 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-31",
+          "code" : "710",
+          "detail" : "Bank Fees",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-31",
+          "code" : "710",
+          "detail" : "Account maintenance",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.4",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-07",
+          "code" : "730",
+          "detail" : "Home Contents Insurance",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.4",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-07",
+          "code" : "730",
+          "detail" : "Kauri Insurance Kauri",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.4",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-03",
+          "code" : "734",
+          "detail" : "Home Office Expenses - iCloud+ 2TB subscription ($54.98 less $14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-03",
+          "code" : "734",
+          "detail" : "APPLE.COM/BILL (54.98 less 14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-17",
+          "code" : "726",
+          "detail" : "Entertainment (Business Lunch/Coffee/Meals/Drinks)",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-17",
+          "code" : "726",
+          "detail" : "Entertainment (1)",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-10",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - CloudNote",
+          "amount" : -20.26,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-10",
+          "code" : "739",
+          "detail" : "CLOUDNOTE.IO SAN FRANCISCO (USD 12.00) incl. offshore margin",
+          "amount" : -20.26,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1 (+1 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-10-14",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - NoteForge AI",
+          "amount" : -33.69,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-10-14",
+          "code" : "739",
+          "detail" : "NOTEFORGE AI (USD 20.00 incl. fee 0.17)",
+          "amount" : -33.69,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.1 (+1 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-10",
+          "date" : "2026-09-30",
+          "code" : "734",
+          "detail" : "Home Office Expenses - Domain renewal (card 30/09, processed 01/10)",
+          "amount" : -35.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -4.5652,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-10",
+          "date" : "2026-09-30",
+          "code" : "734",
+          "detail" : "DOMAINSNZ.EXAMPLE AUCKLAND",
+          "amount" : -35.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -4.5652,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-05",
+          "code" : "725",
+          "detail" : "Power - Fibrewave",
+          "amount" : -124.97,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -16.3004,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-05",
+          "code" : "725",
+          "detail" : "Power - FIBREWAVE INTERNET",
+          "amount" : -124.97,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -16.3004,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-05",
+          "code" : "727",
+          "detail" : "Internet - Fibrewave",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-05",
+          "code" : "727",
+          "detail" : "Internet - FIBREWAVE INTERNET",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-02",
+          "code" : "724",
+          "detail" : "Apartment Rent",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-02",
+          "code" : "724",
+          "detail" : "4B-12 (Apartment Rent-4B-12 S000123",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-05",
+          "code" : "728",
+          "detail" : "Mobile Plan - Tui Mobile NZ",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-05",
+          "code" : "728",
+          "detail" : "Tui Mobile TM",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-15",
+          "code" : "707",
+          "detail" : "Income - Nov - Kereru Digital (Invoice INV-1042)",
+          "amount" : 9142.50,
+          "gstCollected" : 1192.5000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-15",
+          "code" : "707",
+          "detail" : "Kereru Digital Limited",
+          "amount" : 9142.50,
+          "gstCollected" : 1192.5000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-08",
+          "code" : "729",
+          "detail" : "Car Park Fees",
+          "amount" : -31.40,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -4.0957,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3 (+2 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-08",
+          "code" : "729",
+          "detail" : "Car Parking (3)",
+          "amount" : -31.40,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -4.0957,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3 (+2 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-30",
+          "code" : "710",
+          "detail" : "Bank Fees",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-30",
+          "code" : "710",
+          "detail" : "Account maintenance",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-07",
+          "code" : "730",
+          "detail" : "Home Contents Insurance",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-07",
+          "code" : "730",
+          "detail" : "Kauri Insurance Kauri",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-03",
+          "code" : "734",
+          "detail" : "Home Office Expenses - iCloud+ 2TB subscription ($54.98 less $14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-03",
+          "code" : "734",
+          "detail" : "APPLE.COM/BILL (54.98 less 14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-12",
+          "code" : "726",
+          "detail" : "Entertainment (Business Lunch/Coffee/Meals/Drinks)",
+          "amount" : -87.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.3478,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-12",
+          "code" : "726",
+          "detail" : "Entertainment (2)",
+          "amount" : -87.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.3478,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-10",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - CloudNote",
+          "amount" : -21.53,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-10",
+          "code" : "739",
+          "detail" : "CLOUDNOTE.IO SAN FRANCISCO (USD 12.00) incl. offshore margin",
+          "amount" : -21.53,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1 (+1 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-14",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - NoteForge AI",
+          "amount" : -33.30,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-14",
+          "code" : "739",
+          "detail" : "NOTEFORGE AI (USD 20.00 incl. fee 0.17)",
+          "amount" : -33.30,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.1 (+1 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-04",
+          "code" : "732",
+          "detail" : "Indemnity Insurance - Shield (annual)",
+          "amount" : -1240.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -161.7391,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-04",
+          "code" : "732",
+          "detail" : "SHIELD PROFESSIONAL INDEMNITY",
+          "amount" : -1240.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -161.7391,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-11",
+          "date" : "2026-11-22",
+          "code" : "711",
+          "detail" : "Accountant Fee (Accountancy)",
+          "amount" : -1150.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -150.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-11",
+          "date" : "2026-11-22",
+          "code" : "711",
+          "detail" : "1234Ledger L&Co Inv-5511",
+          "amount" : -1150.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -150.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-05",
+          "code" : "725",
+          "detail" : "Power - Fibrewave",
+          "amount" : -125.55,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -16.3761,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-05",
+          "code" : "725",
+          "detail" : "Power - FIBREWAVE INTERNET",
+          "amount" : -125.55,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -16.3761,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-05",
+          "code" : "727",
+          "detail" : "Internet - Fibrewave",
+          "amount" : -80.24,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -10.4661,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-05",
+          "code" : "727",
+          "detail" : "Internet - FIBREWAVE INTERNET",
+          "amount" : -80.24,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -10.4661,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-02",
+          "code" : "724",
+          "detail" : "Apartment Rent",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-02",
+          "code" : "724",
+          "detail" : "4B-12 (Apartment Rent-4B-12 S000123",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-05",
+          "code" : "728",
+          "detail" : "Mobile Plan - Tui Mobile NZ",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-05",
+          "code" : "728",
+          "detail" : "Tui Mobile TM",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-15",
+          "code" : "707",
+          "detail" : "Income - Dec - Kereru Digital (Invoice INV-1043)",
+          "amount" : 10695.00,
+          "gstCollected" : 1395.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-15",
+          "code" : "707",
+          "detail" : "Kereru Digital Limited",
+          "amount" : 10695.00,
+          "gstCollected" : 1395.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-06",
+          "code" : "729",
+          "detail" : "Car Park Fees",
+          "amount" : -16.30,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -2.1261,
+          "source" : "BusinessEveryday-05Apr27.pdf p.3 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-06",
+          "code" : "729",
+          "detail" : "Car Parking (2)",
+          "amount" : -16.30,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -2.1261,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2 (+1 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-07",
+          "code" : "730",
+          "detail" : "Home Contents Insurance",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.3",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-07",
+          "code" : "730",
+          "detail" : "Kauri Insurance Kauri",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.3",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-03",
+          "code" : "734",
+          "detail" : "Home Office Expenses - iCloud+ 2TB subscription ($54.98 less $14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-03",
+          "code" : "734",
+          "detail" : "APPLE.COM/BILL (54.98 less 14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-09",
+          "code" : "726",
+          "detail" : "Entertainment (Business Lunch/Coffee/Meals/Drinks)",
+          "amount" : -117.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -15.2609,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-09",
+          "code" : "726",
+          "detail" : "Entertainment (2)",
+          "amount" : -117.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -15.2609,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-10",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - CloudNote",
+          "amount" : -21.09,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-10",
+          "code" : "739",
+          "detail" : "CLOUDNOTE.IO SAN FRANCISCO (USD 12.00) incl. offshore margin",
+          "amount" : -21.09,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.1 (+1 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-14",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - NoteForge AI",
+          "amount" : -33.36,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-14",
+          "code" : "739",
+          "detail" : "NOTEFORGE AI (USD 20.00 incl. fee 0.17)",
+          "amount" : -33.36,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.1 (+1 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-12",
+          "code" : "734",
+          "detail" : "Home Office Expenses - Laptop (may need capitalising)",
+          "amount" : -2899.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -378.1304,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-12",
+          "code" : "734",
+          "detail" : "TECHWORLD FAKEVILLE",
+          "amount" : -2899.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -378.1304,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2026-12",
+          "date" : "2026-12-31",
+          "code" : "734",
+          "detail" : "Home Office Expenses - Printer paper and toner (card 31/12, processed 04/01)",
+          "amount" : -24.50,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -3.1957,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2026-12",
+          "date" : "2026-12-31",
+          "code" : "734",
+          "detail" : "FAKEVILLE STATIONERY CO",
+          "amount" : -24.50,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -3.1957,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-05",
+          "code" : "725",
+          "detail" : "Power - Fibrewave",
+          "amount" : -122.47,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -15.9743,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-05",
+          "code" : "725",
+          "detail" : "Power - FIBREWAVE INTERNET",
+          "amount" : -122.47,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -15.9743,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-05",
+          "code" : "727",
+          "detail" : "Internet - Fibrewave",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-05",
+          "code" : "727",
+          "detail" : "Internet - FIBREWAVE INTERNET",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-20",
+          "code" : "733",
+          "detail" : "Body Corp Fees - Kowhai BC levy Jan-Mar (net of early-payment discount)",
+          "amount" : -3190.90,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -416.2043,
+          "source" : "ChequeAccount-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-20",
+          "code" : "733",
+          "detail" : "4BBodyCorp-Kowhai Body-Corp L0007700001",
+          "amount" : -3190.90,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -416.2043,
+          "source" : "ChequeAccount-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-02",
+          "code" : "724",
+          "detail" : "Apartment Rent",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-02",
+          "code" : "724",
+          "detail" : "4B-12 (Apartment Rent-4B-12 S000123",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-05",
+          "code" : "728",
+          "detail" : "Mobile Plan - Tui Mobile NZ",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-05",
+          "code" : "728",
+          "detail" : "Tui Mobile TM",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-15",
+          "code" : "707",
+          "detail" : "Income - Jan - Kereru Digital (Invoice INV-1044)",
+          "amount" : 10005.00,
+          "gstCollected" : 1305.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-15",
+          "code" : "707",
+          "detail" : "Kereru Digital Limited",
+          "amount" : 10005.00,
+          "gstCollected" : 1305.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-28",
+          "code" : "707",
+          "detail" : "Income - January - Pohutukawa Analytics (Invoice PA-0007)",
+          "amount" : 4140.00,
+          "gstCollected" : 540.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-28",
+          "code" : "707",
+          "detail" : "Pohutukawa Analytics Ltd",
+          "amount" : 4140.00,
+          "gstCollected" : 540.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-04",
+          "code" : "729",
+          "detail" : "Car Park Fees",
+          "amount" : -37.50,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -4.8913,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2 (+3 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-04",
+          "code" : "729",
+          "detail" : "Car Parking (4)",
+          "amount" : -37.50,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -4.8913,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2 (+3 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-31",
+          "code" : "710",
+          "detail" : "Bank Fees",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-31",
+          "code" : "710",
+          "detail" : "Account maintenance",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-07",
+          "code" : "730",
+          "detail" : "Home Contents Insurance",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-07",
+          "code" : "730",
+          "detail" : "Kauri Insurance Kauri",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-03",
+          "code" : "734",
+          "detail" : "Home Office Expenses - iCloud+ 2TB subscription ($54.98 less $14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-03",
+          "code" : "734",
+          "detail" : "APPLE.COM/BILL (54.98 less 14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-09",
+          "code" : "726",
+          "detail" : "Entertainment (Business Lunch/Coffee/Meals/Drinks)",
+          "amount" : -87.50,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.4130,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-09",
+          "code" : "726",
+          "detail" : "Entertainment (2)",
+          "amount" : -87.50,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.4130,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-10",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - CloudNote",
+          "amount" : -21.04,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-10",
+          "code" : "739",
+          "detail" : "CLOUDNOTE.IO SAN FRANCISCO (USD 12.00) incl. offshore margin",
+          "amount" : -21.04,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-01",
+          "date" : "2027-01-14",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - NoteForge AI",
+          "amount" : -34.31,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-01",
+          "date" : "2027-01-14",
+          "code" : "739",
+          "detail" : "NOTEFORGE AI (USD 20.00 incl. fee 0.17)",
+          "amount" : -34.31,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.2 (+1 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-05",
+          "code" : "725",
+          "detail" : "Power - Fibrewave",
+          "amount" : -122.57,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -15.9874,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-05",
+          "code" : "725",
+          "detail" : "Power - FIBREWAVE INTERNET",
+          "amount" : -122.57,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -15.9874,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-05",
+          "code" : "727",
+          "detail" : "Internet - Fibrewave",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-05",
+          "code" : "727",
+          "detail" : "Internet - FIBREWAVE INTERNET",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-02",
+          "code" : "724",
+          "detail" : "Apartment Rent",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-02",
+          "code" : "724",
+          "detail" : "4B-12 (Apartment Rent-4B-12 S000123",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-05",
+          "code" : "728",
+          "detail" : "Mobile Plan - Tui Mobile NZ",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-05",
+          "code" : "728",
+          "detail" : "Tui Mobile TM",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-15",
+          "code" : "707",
+          "detail" : "Income - Feb - Kereru Digital (Invoice INV-1045)",
+          "amount" : 11040.00,
+          "gstCollected" : 1440.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-15",
+          "code" : "707",
+          "detail" : "Kereru Digital Limited",
+          "amount" : 11040.00,
+          "gstCollected" : 1440.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-11",
+          "code" : "729",
+          "detail" : "Car Park Fees",
+          "amount" : -24.50,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -3.1957,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1 (+2 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-11",
+          "code" : "729",
+          "detail" : "Car Parking (3)",
+          "amount" : -24.50,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -3.1957,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1 (+2 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-28",
+          "code" : "710",
+          "detail" : "Bank Fees",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-28",
+          "code" : "710",
+          "detail" : "Account maintenance",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-07",
+          "code" : "730",
+          "detail" : "Home Contents Insurance",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.2",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-07",
+          "code" : "730",
+          "detail" : "Kauri Insurance Kauri",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.2",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-03",
+          "code" : "734",
+          "detail" : "Home Office Expenses - iCloud+ 2TB subscription ($54.98 less $14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-03",
+          "code" : "734",
+          "detail" : "APPLE.COM/BILL (54.98 less 14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-06",
+          "code" : "726",
+          "detail" : "Entertainment (Business Lunch/Coffee/Meals/Drinks)",
+          "amount" : -102.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -13.3043,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-06",
+          "code" : "726",
+          "detail" : "Entertainment (2)",
+          "amount" : -102.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -13.3043,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-10",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - CloudNote",
+          "amount" : -20.66,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-10",
+          "code" : "739",
+          "detail" : "CLOUDNOTE.IO SAN FRANCISCO (USD 12.00) incl. offshore margin",
+          "amount" : -20.66,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-14",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - NoteForge AI",
+          "amount" : -34.48,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-14",
+          "code" : "739",
+          "detail" : "NOTEFORGE AI (USD 20.00 incl. fee 0.17)",
+          "amount" : -34.48,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.2 (+1 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-16",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - Kanbanly",
+          "amount" : -20.14,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-16",
+          "code" : "739",
+          "detail" : "KANBANLY PTY SYDNEY (AUD 18.00) incl. offshore margin",
+          "amount" : -20.14,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-02",
+          "date" : "2027-02-22",
+          "code" : "711",
+          "detail" : "Accountant Fee (Accountancy)",
+          "amount" : -575.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -75.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-02",
+          "date" : "2027-02-22",
+          "code" : "711",
+          "detail" : "1234Ledger L&Co Inv-552",
+          "amount" : -575.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -75.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-05",
+          "code" : "725",
+          "detail" : "Power - Fibrewave",
+          "amount" : -129.89,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -16.9422,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-05",
+          "code" : "725",
+          "detail" : "Power - FIBREWAVE INTERNET",
+          "amount" : -129.89,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -16.9422,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-05",
+          "code" : "727",
+          "detail" : "Internet - Fibrewave",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-05",
+          "code" : "727",
+          "detail" : "Internet - FIBREWAVE INTERNET",
+          "amount" : -89.99,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -11.7378,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-02",
+          "code" : "724",
+          "detail" : "Apartment Rent",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-02",
+          "code" : "724",
+          "detail" : "4B-12 (Apartment Rent-4B-12 S000123",
+          "amount" : -2400.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-05",
+          "code" : "728",
+          "detail" : "Mobile Plan - Tui Mobile NZ",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-05",
+          "code" : "728",
+          "detail" : "Tui Mobile TM",
+          "amount" : -65.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -8.4783,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-15",
+          "code" : "707",
+          "detail" : "Income - Mar - Kereru Digital (Invoice INV-1046)",
+          "amount" : 8797.50,
+          "gstCollected" : 1147.5000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-15",
+          "code" : "707",
+          "detail" : "Kereru Digital Limited",
+          "amount" : 8797.50,
+          "gstCollected" : 1147.5000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-09",
+          "code" : "729",
+          "detail" : "Car Park Fees",
+          "amount" : -28.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -3.6522,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1 (+2 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-09",
+          "code" : "729",
+          "detail" : "Car Parking (3)",
+          "amount" : -28.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -3.6522,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1 (+2 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-31",
+          "code" : "710",
+          "detail" : "Bank Fees",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-31",
+          "code" : "710",
+          "detail" : "Account maintenance",
+          "amount" : -5.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "BusinessEveryday-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-07",
+          "code" : "730",
+          "detail" : "Home Contents Insurance",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-07",
+          "code" : "730",
+          "detail" : "Kauri Insurance Kauri",
+          "amount" : -48.20,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -6.2870,
+          "source" : "ChequeAccount-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-03",
+          "code" : "734",
+          "detail" : "Home Office Expenses - iCloud+ 2TB subscription ($54.98 less $14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-03",
+          "code" : "734",
+          "detail" : "APPLE.COM/BILL (54.98 less 14.98 personal)",
+          "amount" : -40.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -5.2174,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-09",
+          "code" : "726",
+          "detail" : "Entertainment (Business Lunch/Coffee/Meals/Drinks)",
+          "amount" : -77.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -10.0435,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-09",
+          "code" : "726",
+          "detail" : "Entertainment (2)",
+          "amount" : -77.00,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : -10.0435,
+          "source" : "KauriRewardsMastercard-05Apr27.pdf p.1 (+1 more)",
+          "ruleDecided" : false
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-10",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - CloudNote",
+          "amount" : -20.69,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-10",
+          "code" : "739",
+          "detail" : "CLOUDNOTE.IO SAN FRANCISCO (USD 12.00) incl. offshore margin",
+          "amount" : -20.69,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "Harbourside-NetBank-Credit-visa.pdf p.2 (+1 more)",
+          "ruleDecided" : true
+        }
+      }, {
+        "golden" : {
+          "month" : "2027-03",
+          "date" : "2027-03-14",
+          "code" : "739",
+          "detail" : "Online Tech Subscriptions (NO GST) - NoteForge AI",
+          "amount" : -33.60,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.2 (+1 more)",
+          "ruleDecided" : false
+        },
+        "actual" : {
+          "month" : "2027-03",
+          "date" : "2027-03-14",
+          "code" : "739",
+          "detail" : "NOTEFORGE AI (USD 20.00 incl. fee 0.17)",
+          "amount" : -33.60,
+          "gstCollected" : 0.0000,
+          "gstClaimed" : 0.0000,
+          "source" : "spend_account_statement_2026-10-01_2027-03-31.pdf p.2 (+1 more)",
+          "ruleDecided" : true
+        }
+      } ],
+      "wrongCode" : [ ],
+      "missing" : [ ],
+      "extra" : [ ]
+    }
+  } ]
+}

@@ -13,7 +13,7 @@ import picocli.CommandLine.IVersionProvider;
         versionProvider = CashbookCommand.Version.class,
         description = "Turns statements and invoices into an accountant-ready GST cashbook.",
         subcommands = {RunCommand.class, IngestCommand.class, ClassifyCommand.class, ReviewCommand.class,
-            ReconcileCommand.class, ExportCommand.class, SynthCommand.class})
+            ReconcileCommand.class, ExportCommand.class, EvalCommand.class, SynthCommand.class})
 public class CashbookCommand {
 
     static class Version implements IVersionProvider {
