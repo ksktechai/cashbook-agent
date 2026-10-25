@@ -7,7 +7,7 @@ The tax maths is deterministic. An LLM is used only where judgment is needed, a 
 - Goals, principles and phases: [PROJECT_BRIEF.md](PROJECT_BRIEF.md)
 - Phase 1 build plan: [docs/BUILD_PROMPT.md](docs/BUILD_PROMPT.md)
 - Synthetic test data and its traps: [docs/SYNTHETIC_DATA.md](docs/SYNTHETIC_DATA.md)
-- Ingest: [docs/INGEST.md](docs/INGEST.md) · Classify and review: [docs/CLASSIFY.md](docs/CLASSIFY.md) · Reconcile: [docs/RECONCILE.md](docs/RECONCILE.md)
+- Ingest: [docs/INGEST.md](docs/INGEST.md) · Classify and review: [docs/CLASSIFY.md](docs/CLASSIFY.md) · Reconcile: [docs/RECONCILE.md](docs/RECONCILE.md) · Export and run: [docs/EXPORT.md](docs/EXPORT.md)
 
 The cashbook needs no LLM. Optionally, a local open-source model through Ollama can suggest codes for merchants no rule covers; no paid LLM API is used.
 
@@ -25,7 +25,8 @@ bin/cashbook-agent classify --in target/ingest --out target/classify --rules con
 bin/cashbook-agent review --dir target/classify --rules config/rules.example.yaml                       # answer the queue
 bin/cashbook-agent reconcile --classified target/classify --ingest target/ingest --period 2026-10:2027-03 \
     --out target/reconcile --rules config/rules.example.yaml                                           # cashbook lines
-bin/cashbook-agent run --period 2026-10:2027-03 --in <folder> --template <xlsx> --out <xlsx>
+bin/cashbook-agent run --period 2026-10:2027-03 --in target/synth/in --template target/synth/template.xlsx \
+    --out target/cashbook.xlsx --rules config/rules.example.yaml   # whole pipeline; stops for review, re-run to finish
 ```
 
 Logs are JSONL on stderr, with one correlation id per run.

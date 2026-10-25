@@ -26,16 +26,22 @@ public final class TemplateLayout {
     public static final int TOTALS_ROW = 105;
     public static final String LAST_ANALYSIS_COLUMN = "AV";
 
-    /** Column -> the code its formula tests. Note AG tests 705 while its header says 735. */
+    /**
+     * Column -> the code its formula tests in the data rows (7-104). Note AG tests 705 while its header says
+     * 735, and AH and AV both test 735 (unused, so harmless).
+     */
     public static final Map<String, String> FORMULA_CODES = codes(
             "J", "707", "K", "706", "L", "703", "M", "704", "N", "709", "O", "738", "P", "739", "Q", "714",
             "R", "710", "S", "711", "T", "712", "U", "713", "V", "715", "W", "724", "X", "725", "Y", "726",
             "Z", "727", "AA", "728", "AB", "729", "AC", "730", "AD", "732", "AE", "733", "AF", "734", "AG", "705",
-            "AH", "735", "AI", "736", "AJ", "737", "AK", "725", "AL", "735", "AM", "727", "AN", "718", "AO", "719",
-            "AP", "717", "AQ", "722", "AR", "708", "AS", "701", "AT", "702", "AU", "731", "AV", "730");
+            "AH", "735", "AI", "736", "AJ", "737", "AN", "718", "AO", "719",
+            "AP", "717", "AQ", "722", "AR", "708", "AS", "701", "AT", "702", "AU", "731", "AV", "735");
 
-    /** Later columns that repeat an earlier column's code, so the row check counts them twice. */
-    public static final List<String> DUPLICATE_COLUMNS = List.of("AK", "AL", "AM", "AV");
+    /**
+     * Row 6 (the opening row, which never holds a transaction) also has formulas in AK, AL and AM, and AV
+     * tests 730 there. They add nothing, but they are part of the real template's structure.
+     */
+    public static final Map<String, String> OPENING_ROW_EXTRA_CODES = codes("AK", "725", "AL", "735", "AM", "727", "AV", "730");
 
     /** Row 5 labels (the real header's "Entertaintment" typo is kept). */
     public static final Map<String, String> HEADER_LABELS = codes(

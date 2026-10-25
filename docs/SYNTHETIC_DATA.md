@@ -60,7 +60,7 @@ Each line in `truth/transactions.jsonl` lists the traps it exercises.
 `TemplateBuilder` rebuilds the real template's structure with fictional names, and keeps its quirks on purpose so the M5 exporter has to handle them:
 
 - the code header row (row 4) mixes text and number cells, stops at column AG, and AG's header (735) disagrees with its formulas (705)
-- AK, AL, AM and AV repeat earlier codes, so the row check `F = SUM(H:AV) − G` double-counts them (the golden cashbook clears them)
+- AK, AL and AM have formulas only in row 6 (the opening row, which never holds a transaction) and the totals row; AV tests 730 in row 6 and 735 below, as do AH and (in the real file) part of AG. None of these double-counts a used code, so every row check is 0
 - GST Expense is missing on exempt rows (rent, bank fees) and typed as 0 on no-GST rows
 - the March rent row links to an empty `OtherCalculation!C15`
 - Cash Position labels row 35 from `H5` ("GST Income") while its amount is GST Expense

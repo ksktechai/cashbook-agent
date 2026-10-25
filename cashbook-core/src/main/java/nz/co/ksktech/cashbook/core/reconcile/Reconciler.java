@@ -132,14 +132,16 @@ public final class Reconciler {
             if (options.monthlyCodes().contains(d.code()) || isMonthlyVendor(d, coded)) {
                 monthly.computeIfAbsent(d.month() + "|" + d.code(), k -> new ArrayList<>()).add(d);
             } else {
-                lines.add(new CashbookLine(d.month(), d.code(), d.detail(), d.amount(), refs(d.sources()), d.gst()));
+                lines.add(new CashbookLine(d.month(), earliest(d.sources()), d.code(), d.detail(), d.amount(), refs(d.sources()),
+                        d.gst()));
             }
         }
         monthly.values().forEach(group -> {
             Draft first = group.getFirst();
             BigDecimal sum = group.stream().map(Draft::amount).reduce(Money.ZERO, BigDecimal::add);
             List<Transaction> sources = group.stream().flatMap(d -> d.sources().stream()).toList();
-            lines.add(new CashbookLine(first.month(), first.code(), codeName(first.code()) + " (" + sources.size() + ")",
+            lines.add(new CashbookLine(first.month(), earliest(sources), first.code(),
+                    codeName(first.code()) + " (" + sources.size() + ")",
                     sum, refs(sources), first.gst()));
         });
         lines.sort(Comparator.comparing(CashbookLine::month).thenComparing(CashbookLine::code));
@@ -257,6 +259,10 @@ public final class Reconciler {
 
     private String codeName(String code) {
         return codeNames.getOrDefault(code, code);
+    }
+
+    private static LocalDate earliest(List<Transaction> sources) {
+        return sources.stream().map(Transaction::transactionDate).min(Comparator.naturalOrder()).orElseThrow();
     }
 
     private static List<SourceRef> refs(List<Transaction> sources) {

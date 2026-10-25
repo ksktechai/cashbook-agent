@@ -46,7 +46,10 @@ class WorkbookTest {
             assertThat(cell(s, "X4").getCellType()).isEqualTo(CellType.NUMERIC);
             assertThat(cell(s, "AG4").getNumericCellValue()).isEqualTo(735);
             assertThat(cell(s, "AG7").getCellFormula()).contains("=705");
-            assertThat(cell(s, "AK7").getCellFormula()).contains("=725");
+            assertThat(cell(s, "AK6").getCellFormula()).contains("=725");
+            assertThat(cell(s, "AK7")).as("AK only has a formula in the opening row").isNull();
+            assertThat(cell(s, "AV6").getCellFormula()).contains("=730");
+            assertThat(cell(s, "AV7").getCellFormula()).contains("=735");
             assertThat(cell(s, "I16")).as("no GST Expense formula on the exempt rent row").isNull();
             assertThat(cell(s, "I20").getNumericCellValue()).as("typed zero on no-GST rows").isZero();
             assertThat(cell(s, "G95").getCellFormula()).isEqualTo("-(" + TemplateLayout.STRAY_LINK_TARGET + ")");

@@ -35,8 +35,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  * Writes the golden cashbook: the sanitised template filled in by hand-style rules, independent of the
- * M5 exporter. Duplicate analysis columns are cleared so every row check is 0, and OtherCalculation holds
- * the itemised sections and the utility split table, as in the real hand-checked cashbook.
+ * M5 exporter. OtherCalculation holds the itemised sections and the utility split table, as in the real
+ * hand-checked cashbook.
  */
 public final class GoldenWorkbookWriter {
 
@@ -81,7 +81,6 @@ public final class GoldenWorkbookWriter {
         try (XSSFWorkbook wb = TemplateBuilder.build()) {
             GoldenWorkbookWriter w = new GoldenWorkbookWriter(world, lines, wb);
             XSSFSheet cashbook = wb.getSheet(TemplateLayout.CASHBOOK);
-            w.clearDuplicateColumns(cashbook);
             for (MonthBlock block : TemplateLayout.MONTHS) {
                 w.fillMonth(cashbook, block);
             }
@@ -89,14 +88,6 @@ public final class GoldenWorkbookWriter {
             Workbooks.save(wb, file);
         } catch (java.io.IOException e) {
             throw new java.io.UncheckedIOException(e);
-        }
-    }
-
-    private void clearDuplicateColumns(XSSFSheet s) {
-        for (String col : TemplateLayout.DUPLICATE_COLUMNS) {
-            for (int row = TemplateLayout.FIRST_FORMULA_ROW; row <= TemplateLayout.TOTALS_ROW; row++) {
-                remove(s, col + row);
-            }
         }
     }
 

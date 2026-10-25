@@ -113,6 +113,8 @@ public final class TemplateBuilder {
 
         int row = TemplateLayout.FIRST_FORMULA_ROW;
         analysisFormulas(s, row, false);
+        TemplateLayout.OPENING_ROW_EXTRA_CODES.forEach((col, code) ->
+                cell(s, col + TemplateLayout.FIRST_FORMULA_ROW).setCellFormula(analysisFormula(code, TemplateLayout.FIRST_FORMULA_ROW)));
         for (row = 7; row <= TemplateLayout.LAST_DATA_ROW; row++) {
             String code = codeAt(row);
             standardFormulas(s, row, code);

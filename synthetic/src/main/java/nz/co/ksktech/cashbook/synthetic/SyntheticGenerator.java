@@ -121,7 +121,7 @@ public final class SyntheticGenerator {
         Jsonl.writeLines(out.resolve(TRUTH_STATEMENTS), statements);
         Jsonl.writeLines(out.resolve(TRUTH_DOCUMENTS), documents);
         Jsonl.writeLines(out.resolve(GOLDEN_JSONL), world.golden().stream()
-                .map(g -> cashbookLine(g, lineFiles, rendered))
+                .map(g -> cashbookLine(g, lineFiles, rendered, specLines))
                 .toList());
 
         Manifest manifest = new Manifest(seed, VERSION, world.period().toString(), files(out));
@@ -164,12 +164,15 @@ public final class SyntheticGenerator {
         return text.replaceAll("\\s+", " ").trim();
     }
 
-    private static CashbookLine cashbookLine(GoldenSpec g, Map<String, String> files, Map<String, RenderedLine> rendered) {
+    private static CashbookLine cashbookLine(GoldenSpec g, Map<String, String> files, Map<String, RenderedLine> rendered,
+            Map<String, SpecLine> specLines) {
         List<SourceRef> sources = g.sourceIds().stream().map(id -> {
             RenderedLine r = rendered.get(id);
             return new SourceRef(files.get(id), r.page(), r.box(), r.rawText());
         }).toList();
-        return new CashbookLine(g.month(), g.code(), g.detail(), Cents.toMoney(g.cents()), sources, g.gst());
+        java.time.LocalDate date = g.sourceIds().stream().map(id -> specLines.get(id).date())
+                .min(java.util.Comparator.naturalOrder()).orElseThrow();
+        return new CashbookLine(g.month(), date, g.code(), g.detail(), Cents.toMoney(g.cents()), sources, g.gst());
     }
 
     /** Removes only what a previous run wrote, never anything else in the folder. */

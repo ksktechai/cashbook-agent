@@ -16,7 +16,7 @@ class CashbookCommandTest {
     @Test
     @Launch("--help")
     void helpListsRunCommand(LaunchResult result) {
-        assertThat(result.getOutput()).contains("cashbook-agent", "run", "ingest", "classify", "review", "reconcile", "synth");
+        assertThat(result.getOutput()).contains("cashbook-agent", "run", "ingest", "classify", "review", "reconcile", "export", "synth");
     }
 
     @Test
@@ -76,5 +76,52 @@ class CashbookCommandTest {
         assertThat(reconcile.exitCode()).isEqualTo(1);
         assertThat(reconciled.resolve("cashbook.jsonl")).isNotEmptyFile();
         assertThat(reconciled.resolve("split.jsonl")).isNotEmptyFile();
+    }
+
+    @Test
+    void runStopsForReviewThenFinishesTheCashbook(QuarkusMainLauncher launcher, @TempDir Path dir) throws Exception {
+        Path synth = dir.resolve("synth");
+        assertThat(launcher.launch("synth", "--seed", "42", "--out", synth.toString()).exitCode()).isZero();
+        Path out = dir.resolve("cashbook.xlsx");
+        String[] run = {"run", "--period", "2026-10:2027-03", "--in", synth.resolve("in").toString(), "--template",
+            synth.resolve("template.xlsx").toString(), "--out", out.toString(), "--rules", "../config/rules.example.yaml",
+            "--llm", "none"};
+        Path classified = dir.resolve("cashbook.xlsx.work").resolve("classify");
+
+        // first run: unknown merchants need review
+        assertThat(launcher.launch(run).exitCode()).isEqualTo(1);
+        assertThat(out).doesNotExist();
+        answerEverything(classified);
+        // second run: the answers are kept; reconcile may raise flags (cut-off, high value)
+        int second = launcher.launch(run).exitCode();
+        if (second != 0) {
+            answerEverything(classified);
+            assertThat(launcher.launch(run).exitCode()).isZero();
+        }
+        assertThat(out).isNotEmptyFile();
+    }
+
+    /** Answers every open review item: excluded (a person would choose codes; any answer completes the run). */
+    private static void answerEverything(Path classified) {
+        java.util.List<nz.co.ksktech.cashbook.classify.ClassifiedLine> lines =
+                nz.co.ksktech.cashbook.classify.ClassifyStore.readLines(classified);
+        java.util.List<nz.co.ksktech.cashbook.classify.ReviewEntry> queue = new java.util.ArrayList<>();
+        java.util.Set<String> answered = new java.util.HashSet<>();
+        for (var e : nz.co.ksktech.cashbook.classify.ClassifyStore.readReview(classified)) {
+            if (e.answered()) {
+                queue.add(e);
+                continue;
+            }
+            answered.add(e.id());
+            queue.add(new nz.co.ksktech.cashbook.classify.ReviewEntry(e.id(), new nz.co.ksktech.cashbook.core.ReviewItem(
+                    e.item().transaction(), e.item().proposed(), e.item().question(), "excluded in review")));
+        }
+        java.util.List<nz.co.ksktech.cashbook.classify.ClassifiedLine> updated = lines.stream().map(l -> answered.contains(l.id())
+                ? new nz.co.ksktech.cashbook.classify.ClassifiedLine(l.id(), l.transaction(),
+                        new nz.co.ksktech.cashbook.core.Classification(null, nz.co.ksktech.cashbook.core.GstTreatment.EXCLUDED,
+                                1.0, nz.co.ksktech.cashbook.core.ClassificationMethod.HUMAN, "review", "excluded in review"),
+                        l.special(), l.aggregate(), l.businessAmount(), java.util.List.of())
+                : l).toList();
+        nz.co.ksktech.cashbook.classify.ClassifyStore.writeLines(classified, updated, queue);
     }
 }
