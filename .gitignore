@@ -41,3 +41,6 @@ target/
 
 # macOS
 .DS_Store
+
+# Local settings (e.g. CASHBOOK_LLM_OLLAMA_URLS); see .env.example
+.env

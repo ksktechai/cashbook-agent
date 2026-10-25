@@ -1,0 +1,73 @@
+# Example rules for the synthetic period (`cashbook-agent synth`). The real rules live in
+# private/rules.yaml, which is git-ignored. Schema: cashbook-classify/src/main/resources/rules.schema.json
+#
+# Order of evaluation: highlightPolicy, then exclude, then vendors (first match wins). Lines no rule
+# matches are unknown: the optional LLM suggests a code, otherwise they go to the review queue.
+#
+# Deliberately NOT covered here, so rules-only runs have unknowns to review and LLM runs have work:
+# the lunch spots, the domain registrar, the stationery shop, the laptop shop and the office-supply
+# purchase and refund.
+
+codes:
+  "706": {name: S/Holder Contribution, gst: NO_GST}
+  "707": {name: Income, gst: STANDARD, hint: "fees received from clients"}
+  "709": {name: Purchases, gst: STANDARD, hint: "goods bought for resale"}
+  "710": {name: Bank Fees, gst: EXEMPT}
+  "711": {name: Accountancy, gst: STANDARD, hint: "accountant and tax-agent fees"}
+  "712": {name: Legal Fees, gst: STANDARD}
+  "713": {name: Vehicle Expenses, gst: STANDARD}
+  "714": {name: Interest, gst: EXEMPT}
+  "715": {name: Postage & Stationery, gst: STANDARD, hint: "postage and courier only; office stationery goes under 734"}
+  "724": {name: Apartment Rent, gst: EXEMPT, hint: "rent for the apartment the home office is in"}
+  "725": {name: Power, gst: STANDARD}
+  "726": {name: Entertainment, gst: STANDARD, hint: "meals, coffee and drinks with clients or for business"}
+  "727": {name: Internet, gst: STANDARD}
+  "728": {name: Mobile Plan, gst: STANDARD, hint: "mobile phone plan"}
+  "729": {name: Car Parking, gst: STANDARD, hint: "parking while working"}
+  "730": {name: Contents Insurance, gst: STANDARD}
+  "732": {name: Indemnity Insurance, gst: STANDARD}
+  "733": {name: Council Rates/Body Corp Fees, gst: STANDARD, hint: "body corporate levies and council rates"}
+  "734": {name: Home Office Expenses, gst: STANDARD, hint: "home office equipment, computers, software, domains, web services and office stationery bought in NZ"}
+  "738": {name: ACC Levy, gst: NO_GST}
+  "739": {name: No GST Purchases (online tech. subscriptions), gst: NO_GST, hint: "subscriptions charged by overseas online services in foreign currency (no NZ GST)"}
+
+# Reference only: the accountant applies these, the cashbook records full amounts.
+businessUse:
+  "725": 0.25
+  "726": 0.5
+  "727": 1.0
+  "728": 0.8
+  "730": 0.25
+  "733": 0.25
+
+highlightPolicy:
+  BUSINESS: ALL_LINES
+  CHEQUE: HIGHLIGHTED_ONLY
+  CREDIT_CARD: HIGHLIGHTED_ONLY
+  SPEND: HIGHLIGHTED_ONLY
+
+exclude:
+  - {match: "(?i)PAYMENT RECEIVED|Mastercard (MC Internet Transfer|pmt)|CARD \\d{4}visa", reason: "card repayment (the card lines are coded instead)"}
+  - {match: "(?i)^(Cheque Account|Business Everyday) Drawings|TRANSFER TO|^A L EXAMPLE", reason: "transfer between own accounts"}
+  - {match: "(?i)online ?saver", reason: "savings sweep"}
+  - {match: "(?i)Sharepot Spend|Top up from bank|Transfer from Wallet", reason: "spend account top-up (the spend lines are coded instead)"}
+  - {match: "(?i)\\bATM\\b", reason: "ATM cash"}
+  - {match: "(?i)\\bIRD\\b|Inland Revenue", reason: "tax payment or refund"}
+
+vendors:
+  - {match: "(?i)^(Kereru Digital|Pohutukawa Analytics)", code: "707", accounts: [BUSINESS], note: client receipt}
+  - {match: "(?i)Apartment.*Rent", code: "724"}
+  - {match: "(?i)^Tui Mobile", code: "728"}
+  - {match: "(?i)^Park on Quay", code: "729", aggregate: MONTHLY, special: monthlyAggregate}
+  - {match: "(?i)^Account maintenance", code: "710"}
+  - {match: "(?i)Ledger|L&Co", code: "711"}
+  - {match: "(?i)^Kauri Insurance", code: "730", onlyIfHighlighted: true, note: contents insurance}
+  - {match: "(?i)BodyCorp|Body-Corp", code: "733", note: "paid net of the early-payment discount"}
+  - {match: "(?i)^APPLE\\.COM/BILL", code: "734", special: mixedCharge, businessAmount: 40.00, note: "iCloud+ 2TB; the rest is personal"}
+  - {match: "(?i)FIBREWAVE", code: "725", special: utilitySplit, note: "split into Power 725 and Internet 727"}
+  - {match: "(?i)CLOUDNOTE\\.IO|KANBANLY", code: "739"}
+  - {match: "(?i)^OFFSHORE SERVICE MARGINS", code: "739", special: offshoreMargin}
+  - {match: "(?i)^Exchange to USD", code: "739", special: fxConversion}
+  - {match: "(?i)^NOTEFORGE AI", code: "739", special: fxPurchase, note: "costed by its currency exchange"}
+  - {match: "(?i)SHIELD PROFESSIONAL INDEMNITY", code: "732"}
+  - {match: "(?i)KAWAKAWA CAFE", code: "726", ask: "Was this cafe visit for business?"}

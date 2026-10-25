@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ksktechai/cashbook-agent/rules.schema.json",
+  "title": "cashbook-agent rules file",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "codes": {
+      "description": "The accountant's chart: code -> name and default GST treatment.",
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]{3}$": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "gst"],
+          "properties": {
+            "name": {"type": "string", "minLength": 1},
+            "gst": {"$ref": "#/$defs/gst"},
+            "hint": {"type": "string", "description": "what belongs under this code; shown to the optional LLM"}
+          }
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    },
+    "businessUse": {
+      "description": "Reference business-use share per code (0-1). Not applied by the cashbook.",
+      "type": "object",
+      "patternProperties": {"^[0-9]{3}$": {"type": "number", "minimum": 0, "maximum": 1}},
+      "additionalProperties": false
+    },
+    "vendors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["match", "code"],
+        "properties": {
+          "match": {"type": "string", "minLength": 1, "description": "Java regex, matched against the description"},
+          "code": {"type": "string", "pattern": "^[0-9]{3}$"},
+          "gst": {"$ref": "#/$defs/gst"},
+          "accounts": {"type": "array", "items": {"$ref": "#/$defs/accountType"}, "uniqueItems": true},
+          "onlyIfHighlighted": {"type": "boolean"},
+          "aggregate": {"enum": ["MONTHLY"]},
+          "special": {"enum": ["utilitySplit", "mixedCharge", "offshoreMargin", "fxConversion", "fxPurchase", "monthlyAggregate"]},
+          "businessAmount": {"type": "number", "exclusiveMinimum": 0},
+          "reviewIfOverInclGst": {"type": "number", "exclusiveMinimum": 0},
+          "ask": {"type": "string", "minLength": 1},
+          "note": {"type": "string"}
+        }
+      }
+    },
+    "exclude": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["match", "reason"],
+        "properties": {
+          "match": {"type": "string", "minLength": 1},
+          "reason": {"type": "string", "minLength": 1},
+          "accounts": {"type": "array", "items": {"$ref": "#/$defs/accountType"}, "uniqueItems": true}
+        }
+      }
+    },
+    "highlightPolicy": {
+      "type": "object",
+      "propertyNames": {"$ref": "#/$defs/accountType"},
+      "additionalProperties": {"enum": ["ALL_LINES", "HIGHLIGHTED_ONLY"]}
+    }
+  },
+  "$defs": {
+    "gst": {"enum": ["STANDARD", "EXEMPT", "NO_GST", "EXCLUDED"]},
+    "accountType": {"enum": ["BUSINESS", "CHEQUE", "CREDIT_CARD", "SPEND"]}
+  }
+}

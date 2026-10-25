@@ -7,6 +7,9 @@ The tax maths is deterministic. An LLM is used only where judgment is needed, a 
 - Goals, principles and phases: [PROJECT_BRIEF.md](PROJECT_BRIEF.md)
 - Phase 1 build plan: [docs/BUILD_PROMPT.md](docs/BUILD_PROMPT.md)
 - Synthetic test data and its traps: [docs/SYNTHETIC_DATA.md](docs/SYNTHETIC_DATA.md)
+- Ingest: [docs/INGEST.md](docs/INGEST.md) · Classify and review: [docs/CLASSIFY.md](docs/CLASSIFY.md)
+
+The cashbook needs no LLM. Optionally, a local open-source model through Ollama can suggest codes for merchants no rule covers; no paid LLM API is used.
 
 ## Build and run
 
@@ -18,6 +21,8 @@ Requires Java 25 (Amazon Corretto 25). The Gradle wrapper does the rest.
 bin/cashbook-agent --help
 bin/cashbook-agent synth --seed 42 --out target/synth   # fake statements, golden cashbook, template
 bin/cashbook-agent ingest --in target/synth/in --out target/ingest   # PDFs -> transactions/statements/documents JSONL
+bin/cashbook-agent classify --in target/ingest --out target/classify --rules config/rules.example.yaml   # rules only
+bin/cashbook-agent review --dir target/classify --rules config/rules.example.yaml                       # answer the queue
 bin/cashbook-agent run --period 2026-10:2027-03 --in <folder> --template <xlsx> --out <xlsx>
 ```
 

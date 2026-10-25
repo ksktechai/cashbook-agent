@@ -16,7 +16,7 @@ class CashbookCommandTest {
     @Test
     @Launch("--help")
     void helpListsRunCommand(LaunchResult result) {
-        assertThat(result.getOutput()).contains("cashbook-agent", "run", "ingest", "synth");
+        assertThat(result.getOutput()).contains("cashbook-agent", "run", "ingest", "classify", "review", "synth");
     }
 
     @Test
@@ -60,5 +60,12 @@ class CashbookCommandTest {
         assertThat(out.resolve("transactions.jsonl")).isNotEmptyFile();
         assertThat(out.resolve("statements.jsonl")).isNotEmptyFile();
         assertThat(out.resolve("documents.jsonl")).isNotEmptyFile();
+
+        Path classified = out.resolve("classified");
+        LaunchResult classify = launcher.launch("classify", "--in", out.toString(), "--out", classified.toString(),
+                "--rules", "../config/rules.example.yaml", "--llm", "none");
+        assertThat(classify.exitCode()).isZero();
+        assertThat(classified.resolve("classifications.jsonl")).isNotEmptyFile();
+        assertThat(classified.resolve("review.jsonl")).isNotEmptyFile();
     }
 }
