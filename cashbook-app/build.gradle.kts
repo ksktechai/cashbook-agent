@@ -14,6 +14,8 @@ dependencies {
     implementation(libs.quarkus.picocli)
     implementation(libs.quarkus.logging.json)
     implementation(libs.quarkus.config.yaml)
+    // POI logs through Log4j; route it into the JSON log.
+    runtimeOnly(libs.log4j2.jboss.logmanager)
 
     testImplementation(libs.quarkus.junit)
     testImplementation(libs.jackson.databind)
