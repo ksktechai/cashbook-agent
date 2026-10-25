@@ -20,6 +20,7 @@ final class SyntheticPeriod {
 
     static final Path OUT = Path.of("build", "synth-classify", "seed-42");
     private static List<Transaction> transactions;
+    private static List<nz.co.ksktech.cashbook.core.UtilityInvoice> invoices;
     private static Map<String, JsonNode> truth;
 
     /** Merchants config/rules.example.yaml leaves out on purpose (and the refund pair, settled in M4). */
@@ -35,8 +36,14 @@ final class SyntheticPeriod {
             Ingestor.Result r = new Ingestor(new IngestOptions(d.highlightThreshold(), d.businessAccount(), false, "", 300))
                     .ingest(OUT.resolve(SyntheticGenerator.IN));
             transactions = r.transactions();
+            invoices = r.invoices();
         }
         return transactions;
+    }
+
+    static synchronized List<nz.co.ksktech.cashbook.core.UtilityInvoice> invoices() {
+        transactions();
+        return invoices;
     }
 
     /** Truth record for an extracted transaction, matched by file, date, amount and description. */

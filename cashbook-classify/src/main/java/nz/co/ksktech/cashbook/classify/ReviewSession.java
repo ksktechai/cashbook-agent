@@ -17,6 +17,7 @@ import nz.co.ksktech.cashbook.core.ClassificationMethod;
 import nz.co.ksktech.cashbook.core.GstTreatment;
 import nz.co.ksktech.cashbook.core.ReviewItem;
 import nz.co.ksktech.cashbook.core.Transaction;
+import nz.co.ksktech.cashbook.core.reconcile.Merchants;
 import nz.co.ksktech.cashbook.core.rules.Rules;
 
 /**
@@ -27,8 +28,6 @@ import nz.co.ksktech.cashbook.core.rules.Rules;
 public final class ReviewSession {
 
     public static final String DECIDED_BY = "review";
-    private static final Pattern MERCHANT_STOP = Pattern.compile(".*[\\d*/].*");
-    private static final int MERCHANT_WORDS = 4;
 
     private final Path dir;
     private final Path rulesFile;
@@ -173,16 +172,9 @@ public final class ReviewSession {
         }
     }
 
-    /** The merchant part of a description: its leading words, stopping at one with digits or masks. */
+    /** The merchant part of a description, used for learned rules. */
     static String merchant(String description) {
-        List<String> words = new ArrayList<>();
-        for (String w : description.strip().split("\\s+")) {
-            if (MERCHANT_STOP.matcher(w).matches() || words.size() == MERCHANT_WORDS) {
-                break;
-            }
-            words.add(w);
-        }
-        return String.join(" ", words);
+        return Merchants.name(description);
     }
 
     private String read() {

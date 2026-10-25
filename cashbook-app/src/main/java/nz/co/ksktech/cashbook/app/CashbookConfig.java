@@ -2,10 +2,13 @@ package nz.co.ksktech.cashbook.app;
 
 import io.smallrye.config.ConfigMapping;
 import io.smallrye.config.WithDefault;
+import java.math.BigDecimal;
 import java.nio.file.Path;
 import java.time.Duration;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 /** Application settings under the {@code cashbook} prefix. */
 @ConfigMapping(prefix = "cashbook")
@@ -18,6 +21,8 @@ public interface CashbookConfig {
     Ingest ingest();
 
     Llm llm();
+
+    Reconcile reconcile();
 
     interface Rules {
         /** Rules YAML; the real one lives in {@code private/rules.yaml}. */
@@ -95,5 +100,26 @@ public interface CashbookConfig {
             @WithDefault("PT2S")
             Duration probeTimeout();
         }
+    }
+
+    interface Reconcile {
+        /** Purchases above this, GST-exclusive, are flagged "may need capitalising". */
+        @WithDefault("1000.00")
+        BigDecimal capitaliseThresholdExclGst();
+
+        /** Codes whose purchases can be assets (not services, levies or insurance). */
+        @WithDefault("734,709")
+        Set<String> capitaliseCodes();
+
+        /** Codes summed to one cashbook line per month (the template has one row per month for these). */
+        @WithDefault("726,729")
+        Set<String> monthlyCodes();
+
+        /** Code -> OtherCalculation section; defaults in application.yaml. */
+        Map<String, String> sections();
+
+        /** Days allowed between a bank repayment and the card's "payment received". */
+        @WithDefault("3")
+        int repaymentWindowDays();
     }
 }

@@ -16,7 +16,7 @@ class CashbookCommandTest {
     @Test
     @Launch("--help")
     void helpListsRunCommand(LaunchResult result) {
-        assertThat(result.getOutput()).contains("cashbook-agent", "run", "ingest", "classify", "review", "synth");
+        assertThat(result.getOutput()).contains("cashbook-agent", "run", "ingest", "classify", "review", "reconcile", "synth");
     }
 
     @Test
@@ -67,5 +67,14 @@ class CashbookCommandTest {
         assertThat(classify.exitCode()).isZero();
         assertThat(classified.resolve("classifications.jsonl")).isNotEmptyFile();
         assertThat(classified.resolve("review.jsonl")).isNotEmptyFile();
+
+        // rules only leaves lines for review, so the cashbook is written but reported incomplete (exit 1)
+        Path reconciled = out.resolve("reconciled");
+        LaunchResult reconcile = launcher.launch("reconcile", "--classified", classified.toString(), "--ingest",
+                out.toString(), "--period", "2026-10:2027-03", "--out", reconciled.toString(), "--rules",
+                "../config/rules.example.yaml");
+        assertThat(reconcile.exitCode()).isEqualTo(1);
+        assertThat(reconciled.resolve("cashbook.jsonl")).isNotEmptyFile();
+        assertThat(reconciled.resolve("split.jsonl")).isNotEmptyFile();
     }
 }

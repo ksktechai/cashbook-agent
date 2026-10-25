@@ -18,3 +18,14 @@ quarkus:
       json:
         enabled: true
         excluded-keys: hostName,processName,processId,ndc,sequence,loggerClassName,threadId
+
+cashbook:
+  reconcile:
+    # code -> OtherCalculation section (itemised detail in the template)
+    sections:
+      "726": Entertainment
+      "730": Insurance
+      "732": Insurance
+      "739": Internet Subscriptions
+      "729": Car Park Fees
+      "734": Business Expenses
