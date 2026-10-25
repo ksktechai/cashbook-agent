@@ -10,7 +10,8 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # Tess4J 5.20 needs Leptonica 1.85+, which Ubuntu 24.04 lacks.
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-java@v5
