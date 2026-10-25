@@ -17,7 +17,11 @@ jobs:
         with:
           distribution: corretto
           java-version: '25'
-      - name: Install Tesseract (OCR tests read a scanned synthetic document)
-        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng
+      # OCR tests read a scanned synthetic document. Tess4J loads libtesseract.so and libleptonica.so by
+      # their unversioned names, which Ubuntu only ships in the -dev packages.
+      - name: Install Tesseract
+        run: >-
+          sudo apt-get update &&
+          sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng libtesseract-dev libleptonica-dev
       - uses: gradle/actions/setup-gradle@v5
       - run: ./gradlew build
