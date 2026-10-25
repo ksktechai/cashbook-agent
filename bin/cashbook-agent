@@ -2,4 +2,5 @@
 # Runs the packaged CLI. Build it first with: ./gradlew :cashbook-app:quarkusBuild
 set -eu
 here=$(cd "$(dirname "$0")/.." && pwd)
-exec java -jar "$here/cashbook-app/build/quarkus-app/quarkus-run.jar" "$@"
+# Tess4J reaches the native Tesseract library through JNA; allow it without a startup warning.
+exec java --enable-native-access=ALL-UNNAMED -jar "$here/cashbook-app/build/quarkus-app/quarkus-run.jar" "$@"

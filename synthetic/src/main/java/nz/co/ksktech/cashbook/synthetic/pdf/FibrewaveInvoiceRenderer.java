@@ -18,23 +18,28 @@ public final class FibrewaveInvoiceRenderer {
     private static final PDRectangle SIZE = new PDRectangle(596, 843);
     private static final float LEFT = 41f;
     private static final float RIGHT = 560f;
+    private static final int PAGES = 4;
 
     private FibrewaveInvoiceRenderer() {}
 
     public static RenderResult render(InvoiceSpec invoice, Path file) {
         try (PdfDoc doc = new PdfDoc(invoice.file(), SIZE)) {
-            summary(doc.newPage(), invoice);
-            charges(doc.newPage(), invoice);
-            general(doc.newPage(), invoice);
-            contact(doc.newPage());
-            for (PdfPage p : doc.pages()) {
-                p.text(HELVETICA, 9, LEFT, 816, "GST Number: " + Fictional.FIBREWAVE_GST);
-                p.text(HELVETICA, 9, 541, 816, p.number() + " / " + doc.pageCount());
-                p.text(HELVETICA, 5, LEFT, 836, Fictional.SYNTHETIC_FOOTER);
-            }
+            // Each page's footer is written while the page is open (a finished page cannot be drawn on).
+            summary(page(doc), invoice);
+            charges(page(doc), invoice);
+            general(page(doc), invoice);
+            contact(page(doc));
             doc.save(file);
             return new RenderResult(invoice.file(), doc.pageCount(), java.util.List.of());
         }
+    }
+
+    private static PdfPage page(PdfDoc doc) {
+        PdfPage p = doc.newPage();
+        p.text(HELVETICA, 9, LEFT, 816, "GST Number: " + Fictional.FIBREWAVE_GST);
+        p.text(HELVETICA, 9, 541, 816, p.number() + " / " + PAGES);
+        p.text(HELVETICA, 5, LEFT, 836, Fictional.SYNTHETIC_FOOTER);
+        return p;
     }
 
     private static void amountRow(PdfPage p, float size, float y, String label, String amount) {

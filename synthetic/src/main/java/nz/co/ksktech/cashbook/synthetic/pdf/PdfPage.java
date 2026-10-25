@@ -61,6 +61,9 @@ public final class PdfPage {
 
     /** Draws text with its left edge at x and returns its box. */
     public BoundingBox text(Face font, float size, float x, float baseline, String text) {
+        if (finished) {
+            throw new IllegalStateException("page " + number + " is finished; draw on it before starting the next");
+        }
         if (text.isEmpty()) {
             return new BoundingBox(x, baseline - ASCENT * size, 0, (ASCENT + DESCENT) * size);
         }

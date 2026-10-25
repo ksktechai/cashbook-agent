@@ -16,7 +16,7 @@ class CashbookCommandTest {
     @Test
     @Launch("--help")
     void helpListsRunCommand(LaunchResult result) {
-        assertThat(result.getOutput()).contains("cashbook-agent", "run", "synth");
+        assertThat(result.getOutput()).contains("cashbook-agent", "run", "ingest", "synth");
     }
 
     @Test
@@ -48,5 +48,17 @@ class CashbookCommandTest {
         assertThat(out.resolve("golden/cashbook.jsonl")).exists();
         assertThat(out.resolve("template.xlsx")).exists();
         assertThat(out.resolve("in/BusinessEveryday-05Apr27.pdf")).exists();
+    }
+
+    @Test
+    void ingestReadsTheSyntheticPeriod(QuarkusMainLauncher launcher, @TempDir Path synth, @TempDir Path out) {
+        assertThat(launcher.launch("synth", "--seed", "42", "--out", synth.toString()).exitCode()).isZero();
+
+        LaunchResult result = launcher.launch("ingest", "--in", synth.resolve("in").toString(), "--out", out.toString());
+
+        assertThat(result.exitCode()).isZero();
+        assertThat(out.resolve("transactions.jsonl")).isNotEmptyFile();
+        assertThat(out.resolve("statements.jsonl")).isNotEmptyFile();
+        assertThat(out.resolve("documents.jsonl")).isNotEmptyFile();
     }
 }

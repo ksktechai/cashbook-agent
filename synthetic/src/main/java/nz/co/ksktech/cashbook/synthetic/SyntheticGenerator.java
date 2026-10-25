@@ -19,6 +19,7 @@ import nz.co.ksktech.cashbook.core.SourceRef;
 import nz.co.ksktech.cashbook.core.Transaction;
 import nz.co.ksktech.cashbook.synthetic.model.GoldenSpec;
 import nz.co.ksktech.cashbook.synthetic.model.InvoiceSpec;
+import nz.co.ksktech.cashbook.synthetic.model.Layout;
 import nz.co.ksktech.cashbook.synthetic.model.LevySpec;
 import nz.co.ksktech.cashbook.synthetic.model.SpecLine;
 import nz.co.ksktech.cashbook.synthetic.model.StatementSpec;
@@ -145,11 +146,22 @@ public final class SyntheticGenerator {
         ForeignAmount foreign = line.foreign() == null ? null
                 : new ForeignAmount(Cents.toMoney(line.foreign().foreignCents()), line.foreign().currency());
         Transaction t = new Transaction(source, spec.institution(), spec.accountType(), line.date(), line.processed(),
-                line.description().replace('\n', ' '), Cents.toMoney(line.cents()), foreign,
+                description(line, spec), Cents.toMoney(line.cents()), foreign,
                 Cents.toMoney(line.fxFeeCents()), line.highlighted());
         return new TruthTransaction(line.id(), spec.layout().name(), t,
                 line.highlight() == null ? null : line.highlight().name(), line.highlighted() && spec.flattenHighlights(),
                 where.highlightBox(), line.expected(), line.traps().stream().map(Enum::name).sorted().toList());
+    }
+
+    /**
+     * The description a parser should produce: Westpac-style account exports add the Details column
+     * (e.g. "Drawings", "Spend Card Top Up"), and whitespace is collapsed.
+     */
+    private static String description(SpecLine line, StatementSpec spec) {
+        String text = spec.layout() == Layout.KAURI_ACCOUNT_EXPORT && !line.details().isEmpty()
+                ? line.description() + " " + line.details()
+                : line.description();
+        return text.replaceAll("\\s+", " ").trim();
     }
 
     private static CashbookLine cashbookLine(GoldenSpec g, Map<String, String> files, Map<String, RenderedLine> rendered) {

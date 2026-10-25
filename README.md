@@ -17,10 +17,13 @@ Requires Java 25 (Amazon Corretto 25). The Gradle wrapper does the rest.
 ./gradlew :cashbook-app:quarkusBuild    # package the CLI
 bin/cashbook-agent --help
 bin/cashbook-agent synth --seed 42 --out target/synth   # fake statements, golden cashbook, template
+bin/cashbook-agent ingest --in target/synth/in --out target/ingest   # PDFs -> transactions/statements/documents JSONL
 bin/cashbook-agent run --period 2026-10:2027-03 --in <folder> --template <xlsx> --out <xlsx>
 ```
 
 Logs are JSONL on stderr, with one correlation id per run.
+
+Scanned (image-only) PDFs are read with Tesseract. Install it for local OCR: `brew install tesseract` on macOS, or `apt-get install tesseract-ocr` on Debian/Ubuntu. Without it, the OCR tests are skipped locally; CI and the Docker image include it.
 
 Docker:
 

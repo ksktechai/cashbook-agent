@@ -514,7 +514,7 @@ public final class Scenario {
                     new LevyLine("Insurance - Fire Fund", insurance * 4, insurance, Cents.percent(insurance, "15")));
             LevySpec levy = new LevySpec("body-corp/" + start + "-Levy-Notice-Unit-4B.pdf",
                     Integer.toString(7_700_000 + start.getMonthValue()), start, start.plusDays(30), start,
-                    start.plusMonths(3).minusDays(1), lines, 10);
+                    start.plusMonths(3).minusDays(1), lines, 10, start.getMonthValue() == 1);
             levies.add(levy);
             LocalDate paid = start.plusDays(19);
             SpecLine payment = cheque.at(paid, "4BBodyCorp-Kowhai", -levy.netDueCents())

@@ -17,5 +17,7 @@ jobs:
         with:
           distribution: corretto
           java-version: '25'
+      - name: Install Tesseract (OCR tests read a scanned synthetic document)
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng
       - uses: gradle/actions/setup-gradle@v5
       - run: ./gradlew build

@@ -38,3 +38,6 @@ target/
 
 # Gradle wrapper jar must be committed despite *.jar above
 !gradle/wrapper/gradle-wrapper.jar
+
+# macOS
+.DS_Store

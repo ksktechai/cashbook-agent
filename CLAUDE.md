@@ -32,4 +32,6 @@ Sources of truth: `PROJECT_BRIEF.md` (goals, principles) and `docs/BUILD_PROMPT.
 - `./gradlew build` builds and tests everything
 - `./gradlew :cashbook-app:quarkusBuild && bin/cashbook-agent --help` runs the CLI
 - `bin/cashbook-agent synth --seed 42 --out target/synth` generates the synthetic period (see `docs/SYNTHETIC_DATA.md`)
+- `bin/cashbook-agent ingest --in target/synth/in --out target/ingest` extracts transactions, balances and documents
+- OCR needs Tesseract locally (`brew install tesseract`); CI and Docker install it
 - `./gradlew :synthetic:updateTemplate` rewrites the committed sanitised template after a deliberate `TemplateBuilder` change

@@ -14,7 +14,7 @@ Each layout copies the structure of a real statement. That structure was found b
 | `Harbourside-Online-*.pdf` | ASB account | `– $` / `+ $` amounts; two-line descriptions straddling the amount line |
 | `spend_account_statement_*.pdf` (Sharepot) | Sharesies Spend | timestamps; currency exchange and fee columns; column positions change after page 1 |
 | `fibrewave/<uuid>.pdf` ×7 | Orcon invoice | Power and Broadband sections with subtotals and discount credits; card payment fee billed on the next invoice; credit carried forward |
-| `body-corp/*-Levy-Notice-*.pdf` ×2 | Body-corp levy tax invoice | fund lines with GST; early-payment discount (gross minus discount = net paid) |
+| `body-corp/*-Levy-Notice-*.pdf` ×2 | Body-corp levy tax invoice | fund lines with GST; early-payment discount (gross minus discount = net paid); the January notice is **image-only** (scanned at 300 dpi) to exercise OCR |
 
 **Highlights** are real PDF Highlight annotations in the six colours seen in the real files. Any colour means "business". They cover part of a line (about 6–25% of its box), and some neighbouring rows pick up a sliver. The cheque export uses flattened highlights instead: rectangles drawn into the page content.
 

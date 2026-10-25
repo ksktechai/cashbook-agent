@@ -16,6 +16,9 @@ import nz.co.ksktech.cashbook.synthetic.model.LevySpec.LevyLine;
  */
 public final class LevyNoticeRenderer {
 
+    /** Resolution of the "scanned" copy; typical for a desk scanner. */
+    private static final float SCAN_DPI = 300f;
+
     private LevyNoticeRenderer() {}
 
     public static RenderResult render(LevySpec levy, Path file) {
@@ -108,7 +111,11 @@ public final class LevyNoticeRenderer {
             p.text(HELVETICA_BOLD, 8, 51, 788, "Bank Account: 99-0001-0000001-000");
             p.text(HELVETICA_BOLD, 8, 51, 798, "Reference: L000" + levy.invoiceNumber());
             p.text(HELVETICA, 5, 51, 836, Fictional.SYNTHETIC_FOOTER);
-            doc.save(file);
+            if (levy.scanned()) {
+                doc.saveAsScan(file, SCAN_DPI);
+            } else {
+                doc.save(file);
+            }
             return new RenderResult(levy.file(), doc.pageCount(), List.of());
         }
     }

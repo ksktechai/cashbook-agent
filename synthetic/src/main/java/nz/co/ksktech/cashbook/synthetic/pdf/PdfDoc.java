@@ -17,7 +17,13 @@ import org.apache.pdfbox.cos.COSName;
 import org.apache.pdfbox.cos.COSString;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentInformation;
+import java.awt.image.BufferedImage;
 import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.graphics.image.LosslessFactory;
+import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
+import org.apache.pdfbox.rendering.ImageType;
+import org.apache.pdfbox.rendering.PDFRenderer;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
@@ -71,7 +77,17 @@ public final class PdfDoc implements AutoCloseable {
     /** Writes the file with fixed metadata and an ID derived from the file name. */
     public void save(Path file) {
         finishPages();
-        PDDocumentInformation info = document.getDocumentInformation();
+        fixMetadata(document);
+        try {
+            Files.createDirectories(file.getParent());
+            document.save(file.toFile());
+        } catch (IOException e) {
+            throw new UncheckedIOException("cannot write " + file, e);
+        }
+    }
+
+    private void fixMetadata(PDDocument target) {
+        PDDocumentInformation info = target.getDocumentInformation();
         info.setProducer(PRODUCER);
         info.setCreator(PRODUCER);
         info.setTitle(name);
@@ -84,10 +100,29 @@ public final class PdfDoc implements AutoCloseable {
         COSArray ids = new COSArray();
         ids.add(new COSString(id));
         ids.add(new COSString(id));
-        document.getDocument().getTrailer().setItem(COSName.ID, ids);
-        try {
+        target.getDocument().getTrailer().setItem(COSName.ID, ids);
+    }
+
+    /**
+     * Writes an image-only copy, as a scanner would: each page rendered to greyscale at {@code dpi} and
+     * placed as a full-page image, with no text layer.
+     */
+    public void saveAsScan(Path file, float dpi) {
+        finishPages();
+        try (PDDocument scan = new PDDocument()) {
+            PDFRenderer renderer = new PDFRenderer(document);
+            for (int i = 0; i < document.getNumberOfPages(); i++) {
+                BufferedImage image = renderer.renderImageWithDPI(i, dpi, ImageType.GRAY);
+                PDPage page = new PDPage(size);
+                scan.addPage(page);
+                PDImageXObject xobject = LosslessFactory.createFromImage(scan, image);
+                try (PDPageContentStream cs = new PDPageContentStream(scan, page)) {
+                    cs.drawImage(xobject, 0, 0, size.getWidth(), size.getHeight());
+                }
+            }
+            fixMetadata(scan);
             Files.createDirectories(file.getParent());
-            document.save(file.toFile());
+            scan.save(file.toFile());
         } catch (IOException e) {
             throw new UncheckedIOException("cannot write " + file, e);
         }

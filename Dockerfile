@@ -5,10 +5,12 @@ WORKDIR /src
 COPY . .
 RUN ./gradlew --no-daemon :cashbook-app:quarkusBuild -x test
 
-# Runtime stage: JVM only, no network needed when using the Ollama classifier.
-FROM amazoncorretto:25-headless
-RUN yum install -y shadow-utils && useradd --system --uid 1001 cashbook && yum clean all
+# Runtime stage: JVM plus Tesseract for OCR of scanned documents. Alpine because Amazon Linux 2023 does
+# not package Tesseract. No network is needed at runtime when using the Ollama classifier.
+FROM amazoncorretto:25-alpine
+RUN apk add --no-cache tesseract-ocr tesseract-ocr-data-eng gcompat \
+    && adduser -S -u 1001 cashbook
 WORKDIR /app
 COPY --from=build --chown=cashbook /src/cashbook-app/build/quarkus-app/ /app/
 USER cashbook
-ENTRYPOINT ["java", "-jar", "/app/quarkus-run.jar"]
+ENTRYPOINT ["java", "--enable-native-access=ALL-UNNAMED", "-jar", "/app/quarkus-run.jar"]

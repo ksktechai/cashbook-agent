@@ -4,7 +4,11 @@ import java.time.LocalDate;
 import java.util.List;
 import nz.co.ksktech.cashbook.synthetic.Cents;
 
-/** A body-corporate levy tax invoice with an early-payment discount. Amounts in cents. */
+/**
+ * A body-corporate levy tax invoice with an early-payment discount. Amounts in cents.
+ *
+ * @param scanned written as an image-only PDF (no text layer), as if scanned, to exercise OCR
+ */
 public record LevySpec(
         String file,
         String invoiceNumber,
@@ -13,7 +17,8 @@ public record LevySpec(
         LocalDate periodFrom,
         LocalDate periodTo,
         List<LevyLine> lines,
-        int discountPercent) {
+        int discountPercent,
+        boolean scanned) {
 
     /** One fund line; {@code annualCents} is the yearly levy the quarter is part of. */
     public record LevyLine(String fund, long annualCents, long netCents, long gstCents) {

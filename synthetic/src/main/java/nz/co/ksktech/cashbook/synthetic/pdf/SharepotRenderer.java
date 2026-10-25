@@ -28,7 +28,7 @@ public final class SharepotRenderer {
             float withdrawalRight, float balanceRight) {}
 
     private static final Columns FIRST = new Columns(63, 122, 236, 316, 373, 430, 487, 300, 350, 412, 480, 540);
-    private static final Columns LATER = new Columns(63, 114, 204, 307, 355, 412, 487, 270, 340, 394, 462, 540);
+    private static final Columns LATER = new Columns(63, 120, 204, 307, 355, 412, 487, 270, 340, 394, 462, 540);
 
     private SharepotRenderer() {}
 

@@ -8,6 +8,10 @@ quarkus:
       # Framework start/stop lines fall outside a run and would lack a correlation id.
       "io.quarkus":
         level: WARN
+      # Rendering pages for highlight detection substitutes fonts on hosts without Helvetica (e.g. Alpine);
+      # only text pixels change, which highlight detection ignores.
+      "org.apache.pdfbox.pdmodel.font.PDType1Font":
+        level: ERROR
     console:
       # stdout is for command output; logs go to stderr as JSONL.
       stderr: true
