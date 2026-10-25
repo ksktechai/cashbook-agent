@@ -67,10 +67,11 @@ public interface CashbookConfig {
         String provider();
 
         /**
-         * Send every LLM suggestion to review (pre-filled, accept with "y") instead of accepting those at or
-         * above cashbook.review.threshold. Local models' confidence is not calibrated.
+         * Send every LLM suggestion to review (pre-filled, accept with "y"). On by default because local
+         * models' confidence is not calibrated; set false to accept suggestions at or above
+         * cashbook.review.threshold without review.
          */
-        @WithDefault("false")
+        @WithDefault("true")
         boolean reviewAll();
 
         Ollama ollama();

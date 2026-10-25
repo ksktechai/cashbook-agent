@@ -31,7 +31,7 @@ CASHBOOK_LLM_OLLAMA_URLS=http://my-mac.local:11434,http://192.168.1.10:11434
 | Plain prompt | 1 of 6 | excluded highlighted lunches and the laptop as "personal"; picked 715 for stationery |
 | With code `hint`s and the highlight rule | 5 of 6 | the laptop shop went to 739 (overseas) at confidence 0.95 |
 
-Confidence is **not calibrated**: right and wrong answers both came back at 0.9–0.95. Set `cashbook.llm.review-all=true` to send every LLM suggestion to review as a one-keystroke proposal instead of accepting those at or above `cashbook.review.threshold` (0.8).
+Confidence is **not calibrated**: right and wrong answers both came back at 0.9–0.95. So `cashbook.llm.review-all` is **true by default**: every LLM suggestion goes to review as a one-keystroke proposal, and nothing a model guesses reaches the cashbook unseen. Set it to `false` to accept suggestions at or above `cashbook.review.threshold` (0.8) without review.
 
 ## Rules file
 
